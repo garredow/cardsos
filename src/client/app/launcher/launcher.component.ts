@@ -39,8 +39,6 @@ export class LauncherComponent implements OnInit {
 			]},
 		];
 
-		// this.panels[0].apps = this._appsService.apps;
-
 		this.isReady = true;
 	}
 }

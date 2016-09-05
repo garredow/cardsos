@@ -15,32 +15,26 @@ export class CardComponent implements OnInit, AfterViewInit {
 	@Output() onLaunch = new EventEmitter();
 	@Output() onClose = new EventEmitter<AppConfig>();
 	url: SafeResourceUrl;
-	touchIdentifier: number = null;
 	originalTouch: Touch;
 	dragOffset: string;
 	disableAnimation: boolean = false;
-	removeCard: boolean = false;
 
 	constructor(private sanitizer: DomSanitizationService) { }
 
 	ngOnInit() {
-		console.log('config', this.config);
+		// console.log('config', this.config);
 		this.isDown = true;
 
 		this.url = this.sanitizer.bypassSecurityTrustResourceUrl('about:blank');
-		// this.isDown = false;
-		// this.onLaunch.emit();
 	}
 
 	ngAfterViewInit() {
-
-			this.onLaunch.emit();
+		this.onLaunch.emit();
 		this.isDown = false;
 		setTimeout(() => {
 			this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.config.url);
 			// this.url = this.sanitizer.bypassSecurityTrustResourceUrl('about:blank');
 		}, 400);
-
 	}
 
 	viewFullScreen(ev: Event) {
@@ -86,8 +80,7 @@ export class CardComponent implements OnInit, AfterViewInit {
 
 		this.disableAnimation = false;
 		if (move > 400 || move < -400) {
-			console.log('removing card');
-			// this.removeCard = true;
+			// console.log('removing card');
 			this.dragOffset = `translateY(-120vh)`;
 			setTimeout(() => { this.onClose.emit(this.config);}, 300);
 		} else {

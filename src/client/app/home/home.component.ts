@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 	isLauncherOpen: boolean = false;
 	scrollPosition: number = 0;
 	apps: AppConfig[] = [];
-	allApps: AppConfig[] = [];
 	quickLaunchApps: any[];
 	appName: string;
 	@ViewChild('cardsContainer') scroller: ElementRef;
@@ -24,17 +23,9 @@ export class HomeComponent implements OnInit {
 	constructor(private _rd: Renderer) { }
 
 	ngOnInit() {
-		this.allApps = [
-			{id: 'default', title: 'My App', url: 'about:blank', iconUrl: 'assets/icons/default.png'},
-			{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/default.png'},
-			{id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/default.png'},
-		];
-
 		this.apps = [
-			// {id: 'app1', title: 'App 1', url: 'http://preview.foxcasts.com'},
-			// {id: 'app1', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/default.png'},
-			// {id: 'app2', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/default.png'},
-			// {id: 'app3', title: 'App 3', url: 'about:blank', iconUrl: 'assets/icons/default.png'},
+			// {id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png'},
+			// {id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png'},
 		];
 
 		this.quickLaunchApps = [
@@ -53,13 +44,13 @@ export class HomeComponent implements OnInit {
 
 		if (this.isLauncherOpen) {
 			this.isLauncherOpen = false;
-		} else if (this.isCardView) {
+		} else if (this.isCardView && this.apps.length > 0) {
 			// console.log('Going out of card view');
-			this.isCardView = !this.isCardView;
+			this.isCardView = false;
 		} else {
 			// console.log('Going into card view');
 			this.appName = '';
-			this.isCardView = !this.isCardView;
+			this.isCardView = true;
 		}
 	}
 
@@ -107,12 +98,5 @@ export class HomeComponent implements OnInit {
 		console.log('viewFullScreen:', ev);
 		this.isCardView = false;
 		this.appName = ev.title;
-	}
-
-	requestAppFullScreen() {
-		if (window.matchMedia('(display-mode: standalone)').matches) {
-			console.log('Requesting full screen');
-			document.documentElement.webkitRequestFullScreen();
-		}
 	}
 }

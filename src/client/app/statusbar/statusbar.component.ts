@@ -22,8 +22,6 @@ export class StatusbarComponent implements OnInit {
 	}
 
 	checkBatteryStatus() {
-		// let nav: Navigator;
-
 		(navigator as any).getBattery().then((res: any) => {
 			console.log('checkBatteryStatus', res);
 

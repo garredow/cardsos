@@ -8,33 +8,6 @@
 		box-sizing: border-box;
 	}
 
-	/*.card {
-		position: absolute;
-		overflow: hidden;
-		background-color: #fff;
-		height: 100%;
-		width: 100%;
-		transition: transform 2000ms;
-
-		transform: scale(.7,.7) translateY(-60px);
-		border-radius: 25px;
-		box-shadow: 3px 5px 7px rgba(0,0,0,.1);
-	}
-
-	.small {
-		transform: scale(.7,.7) translateY(-60px);
-		border-radius: 25px;
-		box-shadow: 3px 5px 7px rgba(0,0,0,.1);
-	}
-
-	.down {
-		transform: translateY(100vh);
-	}
-
-	.small.down {
-		transform: scale(.7,.7) translateY(150vh);
-	}*/
-
 	.card {
 		position: absolute;
 		overflow: hidden;
@@ -42,7 +15,6 @@
 		height: 100%;
 		width: 100%;
 		transition: transform 400ms;
-
 		transform: translateY(150vh);
 		border-radius: 25px;
 		box-shadow: 3px 5px 7px rgba(0,0,0,.1);
@@ -88,7 +60,6 @@
 	}
 
 	.app-container {
-		/*border: 1px solid blue;*/
 		border: none;
 		height: 100%;
 		width: 100%;
@@ -99,7 +70,7 @@
 	}
 </style>
 
-<div class="card" [ngClass]="{full: !isCardView, up: !isDown, noanimate: disableAnimation, remove:removeCard}" [draggable]="isCardView" [style.transform]="dragOffset">
+<div class="card" [ngClass]="{full: !isCardView, up: !isDown, noanimate: disableAnimation}" [draggable]="isCardView" [style.transform]="dragOffset">
 	<div class="overlay" [style.display]="isCardView ? 'block' : 'none'" (click)="viewFullScreen($event)" (touchstart)="touchStart($event)" (touchmove)="touchMove($event)" (touchend)="touchEnd($event)">
 		<div class="header">
 			<div class="title">{{config.title}}</div>
