@@ -2,7 +2,7 @@
 
 Current status: Pre-alpha
 
-Live demo: [CardsOS](https://cardsos.choorp.com)
+Live demo: [CardsOS](http://cardsos.choorp.com)
 
 ###What is this?
 CardsOS is a simple web app that tries to simulate the webOS experience. This is very much a work in progress and still in the hacking around and experimenting phase. Still, it's kinda fun to play around with in its current form. As you'll find out, there's still a lot left to do.
