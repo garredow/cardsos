@@ -39,7 +39,7 @@
 		position: absolute;
 		top: 32px;
 		right: 0px;
-		height: 200px;
+		/*height: 200px;*/
 		width: 70vw;
 		background-color: rgba(0,0,0,.85);
 		/*border: 30px;*/
@@ -60,6 +60,25 @@
 		font-size: 1.1em;
 		color: #eaeaea;
 	}
+	.device-menu .row.last {
+		border: none;
+	}
+
+	.scrim {
+		position: absolute;
+		top: -150vh;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		background-color: #000;
+		transition: opacity 300ms;
+		z-index: 100;
+		opacity: 0;
+	}
+	.scrim.showing {
+		top: 32px;
+		opacity: .4;
+	}
 </style>
 
 <div class="app-menu">{{appName}}</div>
@@ -72,5 +91,7 @@
 <div class="device-menu" [ngClass]="{open: isDeviceMenuOpen}" *ngIf="isReady">
 	<div class="row">{{dmSettings.date | date:'fullDate'}}</div>
 	<div class="row">Battery: {{dmSettings.batteryLevel}}%</div>
-	<div class="row" (click)="goFullScreen()">Go Full Screen</div>
+	<div class="row last" (click)="goFullScreen()">Go Full Screen</div>
 </div>
+
+<div class="scrim" [ngClass]="{showing: isDeviceMenuOpen}" (click)="isDeviceMenuOpen = !isDeviceMenuOpen"></div>
