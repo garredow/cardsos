@@ -70,7 +70,7 @@
 	}
 </style>
 
-<div class="card" [ngClass]="{full: !isCardView, up: !isDown, noanimate: disableAnimation}" [draggable]="isCardView" [style.transform]="dragOffset">
+<div class="card" [ngClass]="{full: !isCardView, up: !isDown, noanimate: disableAnimation}" [style.transform]="dragOffset">
 	<div class="overlay" [style.display]="isCardView ? 'block' : 'none'" (click)="viewFullScreen($event)" (touchstart)="touchStart($event)" (touchmove)="touchMove($event)" (touchend)="touchEnd($event)">
 		<div class="header">
 			<div class="title">{{config.title}}</div>
