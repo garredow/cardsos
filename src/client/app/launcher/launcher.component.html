@@ -1,0 +1,115 @@
+<style>
+	:host {
+		display: flex;
+		flex-direction: column;
+		/*background-color: rgba(0,0,0,.5);*/
+		/*background-image: url('assets/ui/launcher-bg.png');*/
+		height: calc(100% - 32px);
+		width: 100%;
+		position: absolute;
+		top: 32px;
+		left: 0px;
+		z-index: 900;
+	}
+	.hidden {
+		background-color: red;
+	}
+
+	.container {
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+
+		-webkit-scroll-snap-points-x: repeat(100%);
+		scroll-snap-points-x: repeat(100vw);
+		-webkit-scroll-snap-destination: 0% 100%;
+		scroll-snap-destination: 0% 100%;
+		-webkit-scroll-snap-type: mandatory;
+		scroll-snap-type: mandatory;
+		scroll-snap-coordinate: 100px 0px;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.panel {
+		display: inline-block;
+		height: calc(100vh - 74px);
+		width: 100vw;
+		vertical-align: top;
+		border-radius: 25px;
+		margin-right: 10px;
+		background-image: url('assets/ui/launcher-bg.png');
+	}
+	.panel:last-child {
+		margin: 0px;
+	}
+
+	.header {
+		text-align: center;
+		/*border-bottom: 1px solid red;*/
+		display: flex;
+		padding: 10px 0;
+	}
+	.header .panel-title {
+		flex: 1;
+		line-height: 35px;
+		color: #fff;
+		font-size: 1.2em;
+	}
+	.header img {
+		margin: 0 20px;
+		opacity: .75;
+	}
+	.header img:active {
+		opacity: 1;
+	}
+	.apps-container {
+		flex: 1;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+	.apps {
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		padding: 15px;
+		box-sizing: border-box;
+		/*border: 1px solid red;*/
+		white-space: normal;
+	}
+
+	.app {
+		display: inline-block;
+		width: 25%;
+		/*margin-bottom: 25px;*/
+		text-align: center;
+		vertical-align: top;
+	}
+	.app img {
+		width: 72px;
+	}
+	.app .title {
+		height: 50px;
+		color: #fff;
+	}
+</style>
+
+<div class="container">
+	<div class="panel" *ngFor="let panel of panels">
+		<div class="header">
+			<img src="assets/ui/arrow-left.png">
+			<div class="panel-title">
+				{{panel.title}}
+			</div>
+			<img src="assets/ui/arrow-right.png">
+		</div>
+		<div class="apps-container" *ngIf="isReady">
+			<div class="apps">
+				<div *ngFor="let app of panel.apps" class="app">
+					<img [src]="app.iconUrl">
+					<div class="title">{{app.title}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,170 @@
+<style>
+	:host {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+	}
+
+	.content {
+		flex: 1;
+		white-space: nowrap;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+	.content.overview {
+		overflow-x: hidden;
+	}
+
+	/* Just Type */
+
+	.justtype {
+		position: absolute;
+		top: 32px;
+		left: 0px;
+		width: 100%;
+		/*height: 40px;*/
+		text-align: center;
+		transition: 200ms;
+	}
+	.justtype.hidden {
+		opacity: 0;
+	}
+
+	.justtype .search-pill {
+		display: flex;
+		height: 60px;
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+		text-align: left;
+		font-size: 20px;
+		color: rgba(255,255,255,.7);
+		/*padding: 16px 36px;*/
+		box-sizing: border-box;
+		border-image-source: url('assets/ui/search-field-bg-launcher.png');
+		border-image-slice: 100 fill;
+		border-image-width: auto;
+		padding: 12px 24px;
+	}
+	.justtype .search-pill > div {
+		flex: 1;
+		line-height: 32px;
+	}
+	.justtype .search-pill img {
+		height: 32px;
+		float: right;
+		opacity: .7;
+	}
+
+	/* Quicklaunch */
+
+	.quicklaunch {
+		position: absolute;
+		bottom: 42px;
+		left: 0px;
+		width: 100%;
+		height: 80px;
+		background-image: url('assets/ui/quicklaunch-bg.png');
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		padding: 0 10px;
+		box-sizing: border-box;
+		transition: 300ms;
+	}
+	.quicklaunch.hidden {
+		transform: translateY(120px);
+	}
+
+	.quicklaunch .icon {
+		height: 58px;
+		width: 58px;
+	}
+
+	/* Navbar */
+
+	.navbar {
+		height: 42px;
+		background-color: #000;
+		text-align: center;
+		color: #fff;
+		font-weight: 500;
+		display: flex;
+		flex-direction: row;
+		z-index: 999;
+	}
+	.navbar > div {
+		flex: 1;
+	}
+	.navbar .btn-home {
+		line-height: 42px;
+	}
+
+	app-card.overview {
+		/*margin: 0 -40px;*/
+	}
+
+	/* UI */
+	.corner {
+		position: absolute;
+		z-index: 999;
+		height: 24px;
+		width: 24px;
+	}
+	.corner.top-left {
+		top: 31px;
+		left: 0px;
+	}
+	.corner.top-right {
+		top: 31px;
+		right: 0px;
+	}
+	.corner.bottom-left {
+		bottom: 41px;
+		left: 0px;
+	}
+	.corner.bottom-right {
+		bottom: 41px;
+		right: 0px;
+	}
+
+	/* Cards */
+
+	app-card {
+		transition: 300ms;
+		transform: scale(1);
+	}
+	app-card.overview {
+		transform: scale(.7);
+	}
+</style>
+
+<status-bar [appName]="appName"></status-bar>
+
+<img class="corner top-left" src="assets/ui/top-left.png">
+<img class="corner top-right" src="assets/ui/top-right.png">
+<div class="justtype" [ngClass]="{hidden: !isCardView}">
+	<div class="search-pill">
+		<div>Just type...</div>
+		<img src="assets/ui/search-button-launcher.png">
+	</div>
+	<!--<img src="assets/ui/search-pill.png">-->
+</div>
+<div #cardsContainer class="content" [ngClass]="{overview: !isCardView}" [scrollLeft]="scrollPosition">
+	<app-card *ngFor="let app of apps; let i = index;" [config]="app" [ngClass]="{overview: isCardView, move: isMoved && (i+1) != apps.length}" [isCardView]="isCardView" (onOpen)="viewFullScreen($event)" (onLaunch)="appLaunched()" (onClose)="closeApp($event)"></app-card>
+</div>
+<div class="quicklaunch" [ngClass]="{hidden: !isCardView}">
+	<!--<div *ngFor="let app of quickLaunchApps" class="item">-->
+		<img *ngFor="let app of quickLaunchApps" [src]="app.iconUrl" class="icon" (click)=openApp(app)>
+	<!--</div>-->
+</div>
+<img class="corner bottom-left" src="assets/ui/bottom-left.png">
+<img class="corner bottom-right" src="assets/ui/bottom-right.png">
+<div class="navbar">
+	<div></div>
+	<div class="btn-home" (click)="handleHomeTapped()">Home</div>
+	<div></div>
+</div>
+
+<app-launcher [ngClass]="{hidden: !isLauncherOpen}"></app-launcher>
