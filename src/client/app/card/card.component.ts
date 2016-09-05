@@ -84,7 +84,7 @@ export class CardComponent implements OnInit, AfterViewInit {
 			this.dragOffset = `translateY(-120vh)`;
 			setTimeout(() => { this.onClose.emit(this.config);}, 300);
 		} else {
-			this.dragOffset = `initial`;
+			this.dragOffset = `translateY(-20px)`;
 		}
 
 		this.originalTouch = null;
