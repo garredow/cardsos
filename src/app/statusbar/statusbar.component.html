@@ -1,0 +1,14 @@
+<div class="app-menu">{{appName}}</div>
+<div class="clock">{{dmSettings.date | date:'h:mm'}}</div>
+<div class="device-menu-tab" (click)="toggleDeviceMenu()">
+	<img src="assets/ui/rssi-4.png">
+	<img [src]="batteryIconUrl">
+</div>
+
+<div class="device-menu" [ngClass]="{open: isDeviceMenuOpen}" *ngIf="isReady">
+	<div class="row">{{dmSettings.date | date:'fullDate'}}</div>
+	<div class="row">Battery: {{dmSettings.batteryLevel}}%</div>
+	<div class="row last" (click)="goFullScreen()">Go Full Screen</div>
+</div>
+
+<div class="scrim" [ngClass]="{showing: isDeviceMenuOpen}" (click)="isDeviceMenuOpen = !isDeviceMenuOpen"></div>

@@ -1,0 +1,9 @@
+<div class="card" [ngClass]="{full: !isCardView, up: !isDown, noanimate: disableAnimation}" [style.transform]="dragOffset">
+	<div class="overlay" [style.display]="isCardView ? 'block' : 'none'" (click)="viewFullScreen($event)" (touchstart)="touchStart($event)" (touchmove)="touchMove($event)" (touchend)="touchEnd($event)">
+		<div class="header">
+			<div class="title">{{config.title}}</div>
+			<div class="btn-close">X</div>
+		</div>
+	</div>
+	<iframe class="app-container" [src]="url" (loadend)="frameContentLoaded()"></iframe>
+</div>
