@@ -22,14 +22,18 @@ export class StatusbarComponent implements OnInit {
 	}
 
 	checkBatteryStatus() {
-		(navigator as any).getBattery().then((res: any) => {
-			console.log('checkBatteryStatus', res);
+		if ((navigator as any).getBattery) {
+			(navigator as any).getBattery().then((res: any) => {
+				console.log('checkBatteryStatus', res);
 
-			this.dmSettings.batteryLevel = res.level * 100;
+				this.dmSettings.batteryLevel = res.level * 100;
 
-			let level = Math.round(res.level * 10);
-			this.batteryIconUrl = `assets/ui/battery-${level}.png`;
-		});
+				let level = Math.round(res.level * 10);
+				this.batteryIconUrl = `assets/ui/battery-${level}.png`;
+			});
+		} else {
+			this.batteryIconUrl = 'assets/ui/battery-7.png';
+		}
 	}
 
 	toggleDeviceMenu() {
