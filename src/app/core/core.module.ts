@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
+
+import { PhoneAppModule } from '../phone-app/phone-app.module';
+import { BrowserAppModule } from '../browser-app/browser-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -12,8 +14,9 @@ import { AppsService } from './apps.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    SharedModule
+    SharedModule,
+    PhoneAppModule,
+    BrowserAppModule
   ],
   declarations: [
     CardComponent,
@@ -25,4 +28,12 @@ import { AppsService } from './apps.service';
   exports: [HomeComponent],
   providers: [AppsService]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    if (parentModule) {
+      throw new Error(
+        'CoreModule is already loaded.'
+      )
+    }
+  }
+}
