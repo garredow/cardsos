@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { AppConfig } from '../shared/interfaces';
+import { AppConfig } from '../../shared/interfaces';
 
 @Component({
 	selector: 'app-card',

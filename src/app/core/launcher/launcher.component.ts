@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AppsService } from '../shared/apps.service';
+import { AppsService } from '../apps.service';
 
 @Component({
 	selector: 'app-launcher',

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AppConfig } from './interfaces';
+// import { AppConfig } from './interfaces';
+import { AppConfig } from '../shared/interfaces';
 
 @Injectable()
 export class AppsService {

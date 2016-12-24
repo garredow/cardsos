@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, Renderer } from '@angular/cor
 import { StatusbarComponent } from '../statusbar/statusbar.component';
 import { CardComponent } from '../card/card.component';
 import { LauncherComponent } from '../launcher/launcher.component';
-import { AppConfig } from '../shared/interfaces';
+import { AppConfig } from '../../shared/interfaces';
 
 @Component({
 	selector: 'app-home',
