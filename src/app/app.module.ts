@@ -11,7 +11,6 @@ import { LauncherComponent } from './launcher/launcher.component';
 import { StatusbarComponent } from './statusbar/statusbar.component';
 
 import { AppsService } from './shared/apps.service';
-import { QwertyComponentComponent } from './qwerty-component/qwerty-component.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { QwertyComponentComponent } from './qwerty-component/qwerty-component.co
     DeviceMenuComponent,
     HomeComponent,
     LauncherComponent,
-    StatusbarComponent,
-    QwertyComponentComponent
+    StatusbarComponent
   ],
   imports: [
     BrowserModule,
