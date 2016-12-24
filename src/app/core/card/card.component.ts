@@ -32,9 +32,17 @@ export class CardComponent implements OnInit, AfterViewInit {
 		this.onLaunch.emit();
 		this.isDown = false;
 		setTimeout(() => {
-			this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.config.url);
-			// this.url = this.sanitizer.bypassSecurityTrustResourceUrl('about:blank');
+			// this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.config.url);
+			this.loadApp();
 		}, 400);
+	}
+
+	loadApp() {
+		console.log('Loading app: ', this.config.id);
+		// switch (this.config.id) {
+		// 	case 'phone':
+		// 		console.
+		// }
 	}
 
 	viewFullScreen(ev: Event) {
