@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
 		this.quickLaunchApps = [
 			{id: 'phone', title: 'Phone', url: 'about:blank', iconUrl: 'assets/icons/phone.png'},
-			{id: 'email', title: 'Email', url: 'about:blank', iconUrl: 'assets/icons/email.png'},
+			{id: 'browser', title: 'Web', url: 'about:blank', iconUrl: 'assets/icons/browser.png'},
 			// {id: 'macaw', title: 'Macaw', url: 'http://choorp.com/macaw', iconUrl: 'assets/icons/macaw.png'},
 			{id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png'},
 			{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png'},

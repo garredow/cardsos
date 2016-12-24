@@ -1,0 +1,17 @@
+<div class="enyo-unselectable" class="container">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline">
+    <div id="btnBack" class="onyx-icon onyx-icon-button back" [ngClass]="{'active':inputState.btnBack}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
+    <div id="btnForward" class="onyx-icon onyx-icon-button forward" [ngClass]="{'active':inputState.btnForward}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
+    <label class="enyo-tool-decorator onyx-input-decorator" [ngClass]="{'onyx-focused': inputState.inpUrl}">
+      <input id="inpUrl" class="enyo-input onyx-input" placeholder="Some text here" (focus)="toggleInputState($event)" (blur)="toggleInputState($event)">
+      <img draggable="false" class="enyo-image" src="assets/enyo/layout/onyx/images/search-input-search.png">
+    </label>
+	<div id="btnShare" class="onyx-icon onyx-icon-button share" [ngClass]="{'active':inputState.btnShare}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
+	<div id="btnNewCard" class="onyx-icon onyx-icon-button new-card" [ngClass]="{'active':inputState.btnNewCard}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
+	<div id="btnBookmark" class="onyx-icon onyx-icon-button bookmark" [ngClass]="{'active':inputState.btnBookmark}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
+  </div>
+
+  <div class="content">
+	  <img src="assets/icons/browser.png">
+  </div>
+</div>
