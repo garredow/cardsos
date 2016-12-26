@@ -1,0 +1,26 @@
+:host {
+	margin: 3px 2px 1px;
+}
+
+.onyx-icon,
+.onyx-icon-toggle {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 100% auto;
+}
+.onyx-icon.onyx-icon-button.active,
+.onyx-icon.onyx-icon-button.pressed,
+.onyx-icon-toggle.active {
+  background-position: 0 -32px;
+}
+.onyx-icon.disabled {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+.onyx-icon.onyx-icon-button.back {
+    background-image: url('assets/enyo/images/browser/menu-icon-back.png');
+}

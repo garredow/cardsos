@@ -1,0 +1,5 @@
+<div class="onyx-toggle-button" [ngClass]="{'off':!isActive}" (click)="toggleState()">
+  <div class="onyx-toggle-content on" [ngClass]="{'display-none':!isActive}">On</div>
+  <div class="onyx-toggle-content off" [ngClass]="{'display-none':isActive}">Off</div>
+  <div class="onyx-toggle-button-knob"></div>
+</div>
