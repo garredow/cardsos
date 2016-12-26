@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PhoneAppModule } from '../phone-app/phone-app.module';
 import { BrowserAppModule } from '../browser-app/browser-app.module';
 import { ScreenlockAppModule } from '../screenlock-app/screenlock-app.module';
+import { WifiAppModule } from '../wifi-app/wifi-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -18,7 +19,8 @@ import { AppsService } from './apps.service';
     SharedModule,
     PhoneAppModule,
     BrowserAppModule,
-    ScreenlockAppModule
+    ScreenlockAppModule,
+    WifiAppModule
   ],
   declarations: [
     CardComponent,
