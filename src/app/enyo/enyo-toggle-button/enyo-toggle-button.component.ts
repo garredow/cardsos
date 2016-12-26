@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'enyo-toggle-button',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./enyo-toggle-button.component.css']
 })
 export class EnyoToggleButtonComponent implements OnInit {
-  isActive: boolean = false;
+  @Input() isActive: boolean = false;
+  @Output() onStateChange = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -15,6 +16,7 @@ export class EnyoToggleButtonComponent implements OnInit {
 
   toggleState() {
     this.isActive = !this.isActive;
+    this.onStateChange.emit(this.isActive);
   }
 
 }
