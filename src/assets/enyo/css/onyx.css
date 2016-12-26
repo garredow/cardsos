@@ -119,6 +119,19 @@
 .onyx-groupbox > .onyx-input-decorator:first-child:last-child {
   border-radius: 4px;
 }
+.onyx-groupbox > .row,
+.onyx-groupbox > .flex-row {
+  box-sizing: border-box;
+  min-height: 49px;
+  padding: 8px;
+}
+.onyx-groupbox > .flex-row {
+  display: flex;
+  align-items: center;
+}
+.onyx-groupbox > .flex-row > div:first-child {
+  flex:1;
+}
 
 /* Icon.css */
 .onyx-icon,
