@@ -81,6 +81,8 @@
   border-top-color: #aaaaaa;
   border-width: 1px;
   border-radius: 4px 4px 0 0;
+  font-size: 14px;
+  padding: 5px;
 }
 .onyx-groupbox > *:last-child {
   border-radius: 0 0 4px 4px;
@@ -222,7 +224,8 @@
   height: 58px;
   display: inline-block;
   background: url('assets/enyo/layout/onyx/images/spinner-dark.gif') no-repeat 0 0;
-  background-size: 54px 55px;
+  /*background-size: 54px 55px;*/
+  background-size: contain !important;
 }
 .onyx-spinner.onyx-light {
   background: url('assets/enyo/layout/onyx/images/spinner-light.gif') no-repeat 0 0;
