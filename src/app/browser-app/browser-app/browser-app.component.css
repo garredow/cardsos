@@ -31,3 +31,7 @@
 .onyx-icon.onyx-icon-button.bookmark {
     background-image: url('assets/enyo/images/browser/menu-icon-bookmark.png');
 }
+/* TODO: This breaks the background images */
+.onyx-toolbar > .onyx-icon {
+    margin: 0 10px;
+}

@@ -1,14 +1,14 @@
 <div class="enyo-unselectable" class="container">
-  <div class="onyx onyx-toolbar onyx-toolbar-inline">
-    <div id="btnBack" class="onyx-icon onyx-icon-button back" [ngClass]="{'active':inputState.btnBack}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
-    <div id="btnForward" class="onyx-icon onyx-icon-button forward" [ngClass]="{'active':inputState.btnForward}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
-    <label class="enyo-tool-decorator onyx-input-decorator" [ngClass]="{'onyx-focused': inputState.inpUrl}">
-      <input id="inpUrl" class="enyo-input onyx-input" placeholder="Some text here" (focus)="toggleInputState($event)" (blur)="toggleInputState($event)">
-      <img draggable="false" class="enyo-image" src="assets/enyo/layout/onyx/images/search-input-search.png">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline" style="display:flex">
+    <enyo-icon-button iconUrl="assets/enyo/images/browser/menu-icon-back.png"></enyo-icon-button>
+    <enyo-icon-button iconUrl="assets/enyo/images/browser/menu-icon-forward.png"></enyo-icon-button>
+    <label class="enyo-tool-decorator onyx-input-decorator" [ngClass]="{'onyx-focused': inputState.inpUrl}" style="flex:1;display:flex;align-items:center;">
+      <input id="inpUrl" class="enyo-input onyx-input" style="flex:1" placeholder="Enter a URL or search term" (focus)="toggleInputState($event)" (blur)="toggleInputState($event)">
+      <img draggable="false" class="enyo-image" src="assets/enyo/layout/onyx/images/search-input-search.png" style="height: 20px;width:20px;">
     </label>
-	<div id="btnShare" class="onyx-icon onyx-icon-button share" [ngClass]="{'active':inputState.btnShare}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
-	<div id="btnNewCard" class="onyx-icon onyx-icon-button new-card" [ngClass]="{'active':inputState.btnNewCard}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
-	<div id="btnBookmark" class="onyx-icon onyx-icon-button bookmark" [ngClass]="{'active':inputState.btnBookmark}" (pointerdown)="toggleInputState($event)" (pointerup)="toggleInputState($event)" (pointerleave)="toggleInputState($event)"></div>
+    <enyo-icon-button iconUrl="assets/enyo/images/browser/menu-icon-share.png"></enyo-icon-button>
+    <enyo-icon-button iconUrl="assets/enyo/images/browser/menu-icon-newcard.png"></enyo-icon-button>
+    <enyo-icon-button iconUrl="assets/enyo/images/browser/menu-icon-bookmark.png"></enyo-icon-button>
   </div>
 
   <div class="content">
