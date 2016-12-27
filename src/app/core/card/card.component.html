@@ -6,8 +6,11 @@
 		</div>
 	</div>
 	<div class="app-frame" [ngSwitch]="config.id">
-		<phone-app *ngSwitchCase="'phone'"></phone-app>
+		<bluetooth-app *ngSwitchCase="'bluetooth'"></bluetooth-app>
 		<browser-app *ngSwitchCase="'browser'"></browser-app>
+		<phone-app *ngSwitchCase="'phone'"></phone-app>
+		<screenlock-app *ngSwitchCase="'screenlock'"></screenlock-app>
+		<wifi-app *ngSwitchCase="'wifi'"></wifi-app>
 		<div *ngSwitchDefault>Default app</div>
 	</div>
 	<!--<iframe class="app-container" [src]="url" (loadend)="frameContentLoaded()"></iframe>-->
