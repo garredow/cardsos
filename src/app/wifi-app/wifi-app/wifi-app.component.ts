@@ -32,8 +32,8 @@ export class WifiAppComponent implements OnInit {
       this.powerupStage = 2;
 
       this.networks = [
-        {ssid: 'Interents', strength: 2, locked: true, connected: false, connecting: false},
-        {ssid: 'Interents-guest', strength: 2, locked: true, connected: false, connecting: false},
+        {ssid: 'Internets', strength: 2, locked: true, connected: false, connecting: false},
+        {ssid: 'Internets-guest', strength: 2, locked: true, connected: false, connecting: false},
         {ssid: 'xfinitywifi', strength: 2, locked: false, connected: false, connecting: false},
       ];
     }, 1300);

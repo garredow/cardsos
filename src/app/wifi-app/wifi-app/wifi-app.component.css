@@ -36,6 +36,15 @@
     padding: 0 5px;
 }
 
+.connecting {
+    font-size: .7em;
+    font-weight: bold;
+    opacity: .5;
+}
+.connected {
+    font-weight: bold;
+}
+
 /* Onyx overrides */
 
 .onyx-groupbox > .flex-row > img{

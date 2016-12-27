@@ -11,8 +11,8 @@
     <div class="onyx-groupbox" *ngIf="powerupStage > 0">
       <div class="onyx-groupbox-header">Choose a Network</div>
       <div class="flex-row" *ngFor="let network of networks">
-        <div [ngClass]="{'connected':network.connected}">{{network.ssid}}</div>
-        <div *ngIf="network.connecting" class="onyx-spinner onyx-light" style="height: 32px; width: 32px;"></div>
+        <div [ngClass]="{'connected':network.connected}">{{network.ssid}}<br><span class="connecting" *ngIf="network.connecting">CONNECTING...</span></div>
+        <!--<div *ngIf="network.connecting" class="onyx-spinner onyx-light" style="height: 32px; width: 32px;"></div>-->
         <img *ngIf="network.connected" src="assets/enyo/images/wifi/checkmark.png">
         <img src="assets/enyo/images/wifi/lock.png">
         <img [src]="'assets/enyo/images/wifi/wifi-' + network.strength + '.png'">
