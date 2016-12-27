@@ -131,7 +131,7 @@
   display: flex;
   align-items: center;
 }
-.onyx-groupbox > .flex-row > div:first-child {
+.onyx-groupbox > .flex-row > div.label {
   flex:1;
 }
 
