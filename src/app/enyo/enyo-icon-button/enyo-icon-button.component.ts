@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EnyoIconButtonComponent implements OnInit {
   isActive: boolean = false;
-  iconUrl: string = 'url(\'assets/enyo/images/browser/menu-icon-back.png\')';
+  @Input() iconUrl: string = 'assets/enyo/images/browser/menu-icon-back.png';
 
   constructor() { }
 

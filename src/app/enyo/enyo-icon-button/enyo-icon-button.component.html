@@ -1,1 +1,2 @@
-<div id="btnBack" class="onyx-icon onyx-icon-button back" [ngClass]="{'active':isActive}" [ngStyle]="{'background-image': iconUrl}" (pointerdown)="toggleState($event)" (pointerup)="toggleState($event)" (pointerleave)="toggleState($event)"></div>
+<div id="btnBack" class="onyx-icon onyx-icon-button back" [ngClass]="{'active':isActive}" [ngStyle]="{'background-image': 'url(' + iconUrl + ')'}"
+(pointerdown)="toggleState($event)" (pointerup)="toggleState($event)" (pointerleave)="toggleState($event)"></div>
