@@ -5,6 +5,7 @@ import { PhoneAppModule } from '../phone-app/phone-app.module';
 import { BrowserAppModule } from '../browser-app/browser-app.module';
 import { ScreenlockAppModule } from '../screenlock-app/screenlock-app.module';
 import { WifiAppModule } from '../wifi-app/wifi-app.module';
+import { BluetoothAppModule } from '../bluetooth-app/bluetooth-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -20,7 +21,8 @@ import { AppsService } from './apps.service';
     PhoneAppModule,
     BrowserAppModule,
     ScreenlockAppModule,
-    WifiAppModule
+    WifiAppModule,
+    BluetoothAppModule
   ],
   declarations: [
     CardComponent,
