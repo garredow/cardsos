@@ -9,8 +9,8 @@
 	</div>
 	<!--<img src="assets/ui/search-pill.png">-->
 </div>
-<div #cardsContainer class="content" [ngClass]="{overview: !isCardView}" [scrollLeft]="scrollPosition">
-	<app-card *ngFor="let app of apps; let i = index;" [config]="app" [ngClass]="{overview: isCardView, move: isMoved && (i+1) != apps.length}" [isCardView]="isCardView" (onOpen)="viewFullScreen($event)" (onLaunch)="appLaunched()" (onClose)="closeApp($event)"></app-card>
+<div #cardsContainer class="content" [ngClass]="{overview: !isCardView}" [scrollLeft]="scrollPosition" (scroll)="logScroll($event)">
+	<app-card *ngFor="let app of apps; let i = index;" [id]="'app-'+app.id" [config]="app" [ngClass]="{overview: isCardView, move: isMoved && (i+1) != apps.length}" [isCardView]="isCardView" (onOpen)="viewFullScreen($event)" (onLaunch)="appLaunched()" (onClose)="closeApp($event)"></app-card>
 </div>
 <div class="quicklaunch" [ngClass]="{hidden: !isCardView}">
 	<!--<div *ngFor="let app of quickLaunchApps" class="item">-->
