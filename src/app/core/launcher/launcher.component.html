@@ -1,5 +1,5 @@
-<div class="container">
-	<div class="panel" *ngFor="let panel of panels">
+<div id="container" class="container" #container (mouseup)="goToHeadingInContainer()" (scroll)="logScroll($event)">
+	<div class="panel" *ngFor="let panel of panels; let i = index;" id="{{'panel'+i}}">
 		<div class="header">
 			<img src="assets/ui/arrow-left.png">
 			<div class="panel-title">

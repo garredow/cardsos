@@ -1,6 +1,8 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 
+import { Ng2PageScrollModule, PageScrollService } from 'ng2-page-scroll/ng2-page-scroll';
+
 import { PhoneAppModule } from '../phone-app/phone-app.module';
 import { BrowserAppModule } from '../browser-app/browser-app.module';
 import { ScreenlockAppModule } from '../screenlock-app/screenlock-app.module';
@@ -18,6 +20,7 @@ import { AppsService } from './apps.service';
 @NgModule({
   imports: [
     SharedModule,
+    Ng2PageScrollModule.forRoot(),
     PhoneAppModule,
     BrowserAppModule,
     ScreenlockAppModule,
@@ -32,7 +35,7 @@ import { AppsService } from './apps.service';
     StatusbarComponent
   ],
   exports: [HomeComponent],
-  providers: [AppsService]
+  providers: [AppsService, PageScrollService]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

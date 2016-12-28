@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject , ViewChild, ElementRef} from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 import { AppsService } from '../apps.service';
+import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
 
 @Component({
 	selector: 'app-launcher',
@@ -12,7 +14,64 @@ export class LauncherComponent implements OnInit {
 	panels: any[];
 	isReady: boolean = false;
 
-	constructor(private _appsService: AppsService) { }
+	@ViewChild('container') private container: ElementRef;
+
+	constructor(private _appsService: AppsService, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: Document) { 
+		PageScrollConfig.defaultIsVerticalScrolling = false;
+	}
+
+	goToHeadingInContainer(): void {
+		let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInlineDirectionInstance(this.document, '#panel2', this.container.nativeElement, false);
+		console.log(this.container, pageScrollInstance);
+
+		this.pageScrollService.start(pageScrollInstance);
+     };
+
+	 scrollToNearestPanel(): void {
+		var position = this.container.nativeElement.scrollLeft;
+		let childPositions = [];
+		for(let i=0; i<this.container.nativeElement.children.length; i++) {
+			childPositions.push({
+				id: this.container.nativeElement.children[i].id,
+				offset: this.container.nativeElement.children[i].offsetLeft,
+				width: this.container.nativeElement.children[i].clientWidth
+			})
+		}
+
+		let scrollTo: string;
+		let distance: number = 0;
+		for (let i=0; i<childPositions.length; i++) {
+			let child = childPositions[i];
+			let nextChild = childPositions[i+1];
+
+			let threshold: number = child.offset + child.width * .6;
+			if (position < threshold) {
+				scrollTo = child.id;
+				distance = Math.abs(position - child.offset);
+				break;
+			}
+		}
+
+		let time: number =  distance / childPositions[0].width * 300;
+		if (time < 40) {
+			time = 40;
+		}
+
+		let pageScrollInstance: PageScrollInstance = PageScrollInstance.advancedInstance(this.document, '#'+scrollTo, [this.container.nativeElement], "", false, 0, true, null, time);
+
+		this.pageScrollService.start(pageScrollInstance);
+	 }
+
+	 private scrollTimer = null;
+	 logScroll(ev) {
+		 if (this.scrollTimer != null) {
+			 clearTimeout(this.scrollTimer);
+		 }
+		 this.scrollTimer = setTimeout(() => { 
+		 	// console.log('scrollend', ev);
+			this.scrollToNearestPanel();
+		 }, 75);
+	 }
 
 	ngOnInit() {
 		console.log('launcher', this._appsService.apps);
