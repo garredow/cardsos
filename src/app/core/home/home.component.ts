@@ -78,15 +78,15 @@ export class HomeComponent implements OnInit {
 		];
 
 		this.quickLaunchApps = [
-			// {id: 'phone', title: 'Phone', url: 'about:blank', iconUrl: 'assets/icons/phone.png'},
-			{id: 'browser', title: 'Web', url: 'about:blank', iconUrl: 'assets/icons/browser.png'},
-			{id: 'screenlock', title: 'Screen & Lock', url: 'about:blank', iconUrl: 'assets/icons/screenlock-64.png'},
-			{id: 'bluetooth', title: 'Bluetooth', url: 'about:blank', iconUrl: 'assets/icons/bluetooth-64.png'},
-			{id: 'wifi', title: 'Wi-Fi', url: 'about:blank', iconUrl: 'assets/icons/wifi-64.png'},
+			{id: 'phone', title: 'Phone', url: '', iconUrl: 'assets/icons/phone.png'},
+			{id: 'browser', title: 'Web', url: '', iconUrl: 'assets/icons/browser.png'},
+			// {id: 'screenlock', title: 'Screen & Lock', url: '', iconUrl: 'assets/icons/screenlock-64.png'},
+			// {id: 'bluetooth', title: 'Bluetooth', url: '', iconUrl: 'assets/icons/bluetooth-64.png'},
+			// {id: 'wifi', title: 'Wi-Fi', url: '', iconUrl: 'assets/icons/wifi-64.png'},
 			// {id: 'macaw', title: 'Macaw', url: 'http://choorp.com/macaw', iconUrl: 'assets/icons/macaw.png'},
-			// {id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png'},
-			// {id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png'},
-			{id: 'launcher', title: 'App 5', url: 'about:blank', iconUrl: 'assets/icons/launcher.png'},
+			{id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png'},
+			{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png'},
+			{id: 'launcher', title: 'App 5', url: '', iconUrl: 'assets/icons/launcher.png'},
 		];
 	}
 
