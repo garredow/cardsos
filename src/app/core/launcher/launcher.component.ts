@@ -102,6 +102,23 @@ export class LauncherComponent implements OnInit {
 		this.isReady = true;
 	}
 
+	goToPreviousPanel(currentIndex) {
+		if (currentIndex > 0) {
+			this.goToPanel(currentIndex-1);
+		}
+	}
+
+	goToNextPanel(currentIndex) {
+		if (currentIndex + 1 < this.panels.length) {
+			this.goToPanel(currentIndex+1);
+		}
+	}
+
+	goToPanel(index) {
+		let pageScrollInstance: PageScrollInstance = PageScrollInstance.advancedInstance(this.document, '#panel' + index, [this.container.nativeElement], "", false, 0, true, null, 200);
+		this.pageScrollService.start(pageScrollInstance);
+	}
+
 	openApp(app: AppConfig) {
 		this.onOpenApp.emit(app);
 	}
