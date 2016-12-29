@@ -73,28 +73,31 @@ export class LauncherComponent implements OnInit {
 		this.panels = [
 			{
 				title: 'Applications', apps: [
-					{ id: 'calculator', title: 'Calculator', url: 'about:blank', iconUrl: 'assets/icons/calculator.png' },
-					{ id: 'calendar', title: 'Calendar', url: 'about:blank', iconUrl: 'assets/icons/calendar.png' },
-					{ id: 'clock', title: 'Clock', url: 'about:blank', iconUrl: 'assets/icons/clock.png' },
-					{ id: 'contacts', title: 'Contacts', url: 'about:blank', iconUrl: 'assets/icons/contacts.png' },
-					{ id: 'email', title: 'Email', url: 'about:blank', iconUrl: 'assets/icons/email.png' },
-					{ id: 'messaging', title: 'Messaging', url: 'about:blank', iconUrl: 'assets/icons/messaging.png' },
-					{ id: 'notes', title: 'Notes', url: 'about:blank', iconUrl: 'assets/icons/notes.png' },
-					{ id: 'phone', title: 'Phone', url: 'about:blank', iconUrl: 'assets/icons/phone.png' },
+					{ id: 'calculator', title: 'Calculator', url: '', iconUrl: 'assets/icons/calculator.png' },
+					{ id: 'calendar', title: 'Calendar', url: '', iconUrl: 'assets/icons/calendar.png' },
+					{ id: 'clock', title: 'Clock', url: '', iconUrl: 'assets/icons/clock.png' },
+					{ id: 'contacts', title: 'Contacts', url: '', iconUrl: 'assets/icons/contacts.png' },
+					{ id: 'email', title: 'Email', url: '', iconUrl: 'assets/icons/email.png' },
+					{ id: 'messaging', title: 'Messaging', url: '', iconUrl: 'assets/icons/messaging.png' },
+					{ id: 'notes', title: 'Notes', url: '', iconUrl: 'assets/icons/notes.png' },
+					{ id: 'phone', title: 'Phone', url: '', iconUrl: 'assets/icons/phone.png' },
 					{ id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png' },
 					{ id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png' },
 				]
 			},
 			{
 				title: 'Extras', apps: [
-					{ id: 'devmode', title: 'Dev Mode', url: 'about:blank', iconUrl: 'assets/icons/devmode.png' },
+					{ id: 'devmode', title: 'Dev Mode', url: '', iconUrl: 'assets/icons/devmode.png' },
 				]
 			},
 			{
 				title: 'System', apps: [
-					{ id: 'accounts', title: 'Accounts', url: 'about:blank', iconUrl: 'assets/icons/accounts.png' },
-					{ id: 'settings', title: 'Settings', url: 'about:blank', iconUrl: 'assets/icons/settings.png' },
-					{ id: 'update', title: 'System Updates', url: 'about:blank', iconUrl: 'assets/icons/update.png' },
+					{ id: 'wifi', title: 'Wi-Fi', url: '', iconUrl: 'assets/icons/wifi-64.png' },
+					{ id: 'bluetooth', title: 'Bluetooth', url: '', iconUrl: 'assets/icons/bluetooth-64.png' },
+					{ id: 'screenlock', title: 'Screen & Lock', url: '', iconUrl: 'assets/icons/screenlock-64.png' },
+					{ id: 'accounts', title: 'Accounts', url: '', iconUrl: 'assets/icons/accounts.png' },
+					{ id: 'settings', title: 'Settings', url: '', iconUrl: 'assets/icons/settings.png' },
+					{ id: 'update', title: 'System Updates', url: '', iconUrl: 'assets/icons/update.png' },
 				]
 			},
 		];
