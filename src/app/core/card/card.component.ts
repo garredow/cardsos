@@ -32,8 +32,11 @@ export class CardComponent implements OnInit, AfterViewInit {
 		this.onLaunch.emit();
 		this.isDown = false;
 		setTimeout(() => {
-			// this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.config.url);
-			this.loadApp();
+			if (this.config.url != '') {
+				this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.config.url);
+			} else {
+				this.loadApp();
+			}
 		}, 400);
 	}
 

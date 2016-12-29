@@ -5,7 +5,7 @@
 			<div class="btn-close">X</div>
 		</div>
 	</div>
-	<div class="app-frame" [ngSwitch]="config.id">
+	<div class="app-frame" [ngSwitch]="config.id" *ngIf="config.url == ''">
 		<bluetooth-app *ngSwitchCase="'bluetooth'"></bluetooth-app>
 		<browser-app *ngSwitchCase="'browser'"></browser-app>
 		<phone-app *ngSwitchCase="'phone'"></phone-app>
@@ -13,5 +13,5 @@
 		<wifi-app *ngSwitchCase="'wifi'"></wifi-app>
 		<div *ngSwitchDefault>Default app</div>
 	</div>
-	<!--<iframe class="app-container" [src]="url" (loadend)="frameContentLoaded()"></iframe>-->
+	<iframe class="app-frame" [src]="url" (loadend)="frameContentLoaded()" *ngIf="config.url != ''"></iframe>
 </div>
