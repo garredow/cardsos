@@ -1,31 +1,7 @@
 # CardsOS
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+CardsOS is a web app that simulates some basic webOS functionality. Things like cards, the launcher, device menu, etc. It's still in the very early stages, but good progress is being made.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Why?
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+A couple reasons! Most of all, I thought it would be fun. I've always loved webOS and really enjoy being able to get a similar experience on the phone or tablet I carry around regularly. I also needed a decently-sized project to better learn Angular2 and TypeScript.
