@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Inject, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, Inject, ViewChild, ElementRef, EventEmitter } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { AppsService } from '../apps.service';
 import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ng2-page-scroll';
+import { AppConfig } from '../../shared/interfaces';
 
 @Component({
 	selector: 'app-launcher',
@@ -13,6 +14,7 @@ export class LauncherComponent implements OnInit {
 	appName: string;
 	panels: any[];
 	isReady: boolean = false;
+	@Output() onOpenApp = new EventEmitter<Object>();
 
 	@ViewChild('container') private container: ElementRef;
 
@@ -98,5 +100,9 @@ export class LauncherComponent implements OnInit {
 		];
 
 		this.isReady = true;
+	}
+
+	openApp(app: AppConfig) {
+		this.onOpenApp.emit(app);
 	}
 }

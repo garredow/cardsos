@@ -1,4 +1,4 @@
-<div id="container" class="container" #container (mouseup)="goToHeadingInContainer()" (scroll)="logScroll($event)">
+<div id="container" class="container" #container (scroll)="logScroll($event)">
 	<div class="panel" *ngFor="let panel of panels; let i = index;" id="{{'panel'+i}}">
 		<div class="header">
 			<img src="assets/ui/arrow-left.png">
@@ -9,7 +9,7 @@
 		</div>
 		<div class="apps-container" *ngIf="isReady">
 			<div class="apps">
-				<div *ngFor="let app of panel.apps" class="app">
+				<div *ngFor="let app of panel.apps" class="app" (click)="openApp(app)">
 					<img [src]="app.iconUrl">
 					<div class="title">{{app.title}}</div>
 				</div>

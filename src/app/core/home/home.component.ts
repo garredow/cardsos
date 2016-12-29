@@ -122,6 +122,14 @@ export class HomeComponent implements OnInit {
 		}
 	}
 
+	openAppFromLauncher(app) {
+		this.handleHomeTapped();
+
+		let timer = setTimeout(() => {
+			this.openApp(app);
+		}, 350);
+	}
+
 	closeApp(app:AppConfig) {
 		let index: number = this.apps.findIndex((x: AppConfig) => x.id === app.id);
 		this.apps.splice(index, 1);
