@@ -10,7 +10,6 @@
 .card {
     position: absolute;
     overflow: hidden;
-    background-color: #fff;
     height: 100%;
     width: 100%;
     transition: transform 400ms;
@@ -62,6 +61,7 @@
     border: none;
     height: 100%;
     width: 100%;
+    background-color: #EAEAEA;
 }
 
 .noanimate {
