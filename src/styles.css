@@ -15,6 +15,7 @@ body {
 	background-repeat: no-repeat;
 	height: 100vh;
 	overflow: hidden;
+	user-select: none;
 }
 
 /* App Launcher */
