@@ -9,6 +9,9 @@
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+
+    /* Safari fix */
+    height: calc(100vh - 74px);
 }
 .content.overview {
     overflow-x: hidden;
