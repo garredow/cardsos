@@ -10,6 +10,7 @@ import { WifiAppModule } from '../wifi-app/wifi-app.module';
 import { BluetoothAppModule } from '../bluetooth-app/bluetooth-app.module';
 import { AccountsAppModule } from '../accounts-app/accounts-app.module';
 import { BackupAppModule } from '../backup-app/backup-app.module';
+import { UpdatesAppModule } from '../updates-app/updates-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -29,7 +30,8 @@ import { AppsService } from './apps.service';
     WifiAppModule,
     BluetoothAppModule,
     AccountsAppModule,
-    BackupAppModule
+    BackupAppModule,
+    UpdatesAppModule
   ],
   declarations: [
     CardComponent,

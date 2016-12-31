@@ -13,6 +13,7 @@
 		<wifi-app *ngSwitchCase="'wifi'"></wifi-app>
 		<accounts-app *ngSwitchCase="'accounts'"></accounts-app>
 		<backup-app *ngSwitchCase="'backup'"></backup-app>
+		<updates-app *ngSwitchCase="'updates'"></updates-app>
 		<div *ngSwitchDefault>Default app</div>
 	</div>
 	<iframe class="app-frame" [src]="url" (loadend)="frameContentLoaded()" *ngIf="config.url != ''"></iframe>

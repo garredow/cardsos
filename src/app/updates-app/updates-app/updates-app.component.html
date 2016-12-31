@@ -1,0 +1,14 @@
+<div class="enyo-unselectable" class="container">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
+    <img class="icon" src="assets/icons/updates-64.png">
+    <div>System Updates</div>
+    <div class="onyx-spinner onyx-dark icon" style="float:right" *ngIf="powerupStage == 0"></div>
+  </div>
+  <div class="content">
+    <p class="sub-text" *ngIf="powerupStage == 0">Checking for updates...</p>
+    <p class="sub-text" *ngIf="powerupStage > 0">Your phone is up to date!</p>
+  </div>
+  <div>
+    <enyo-button label="Check For Updates" style="width: 100%" (click)="checkForUpdates()"></enyo-button>
+  </div>
+</div>
