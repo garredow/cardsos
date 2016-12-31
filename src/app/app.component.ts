@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
   providers: [],
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements AfterViewInit {
+  appLoaded: boolean = false;
+
+  ngAfterViewInit() {
+    console.log('app ngAfterViewInit');
+    this.appLoaded = true;
+  }
 }
