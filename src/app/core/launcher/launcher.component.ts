@@ -101,6 +101,7 @@ export class LauncherComponent implements OnInit {
 					{ id: 'backup', title: 'Backups', url: '', iconUrl: 'assets/icons/backup-64.png' },
 					{ id: 'exhibition', title: 'Exhibition', url: '', iconUrl: 'assets/icons/exhibition-64.png' },
 					{ id: 'vpn', title: 'VPN', url: '', iconUrl: 'assets/icons/vpn-64.png' },
+					{ id: 'location', title: 'Location Services', url: '', iconUrl: 'assets/icons/location-64.png' },
 				]
 			},
 		];

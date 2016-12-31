@@ -1,0 +1,51 @@
+<div class="enyo-unselectable" class="container">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
+    <img class="icon" src="assets/icons/location-64.png">
+    <div>Location Services</div>
+    <enyo-toggle-button style="float:right" (onStateChange)="handleActiveStateChange($event)"></enyo-toggle-button>
+  </div>
+  <div class="content">
+    <p *ngIf="powerupStage == 0">
+      You have turned off all location data sources. No location data will be provided to applications that request your location.
+    </p>
+
+    <div class="onyx-groupbox" *ngIf="powerupStage == 1">
+      <div class="onyx-groupbox-header">For Websites</div>
+      <div class="flex-row" *ngFor="let network of networks">
+        <div class="label">Always Ask</div>
+        EnyoSelect
+      </div>
+      <div class="flex-row" *ngIf="powerupStage == 1">
+        <div class="label">Clear My Location Data</div>
+      </div>
+    </div>
+
+    <div class="sub-text" *ngIf="powerupStage == 1">
+      You will be asked for authorization when a website requests your location.
+    </div>
+
+    <div class="onyx-groupbox" *ngIf="powerupStage == 1">
+      <div class="onyx-groupbox-header">For Applications</div>
+      <div class="flex-row">
+        <div class="label">Always Ask</div>
+        EnyoSelect
+      </div>
+    </div>
+
+    <div class="sub-text" *ngIf="powerupStage == 1">
+      You will be asked for authorization when an application requests your location.
+    </div>
+
+    <div class="onyx-groupbox" *ngIf="powerupStage == 1">
+      <div class="flex-row">
+        <div class="label">Background Data Collection</div>
+        <enyo-toggle-button isActive="true"></enyo-toggle-button>
+      </div>
+    </div>
+
+    <div class="sub-text" *ngIf="powerupStage == 1">
+      Allow Google to automatically collect anonymous location data to improve the quality of location services.
+    </div>
+
+  </div>
+</div>

@@ -16,6 +16,7 @@
 		<updates-app *ngSwitchCase="'updates'"></updates-app>
 		<exhibition-app *ngSwitchCase="'exhibition'"></exhibition-app>
 		<vpn-app *ngSwitchCase="'vpn'"></vpn-app>
+		<location-app *ngSwitchCase="'location'"></location-app>
 		<div *ngSwitchDefault>Default app</div>
 	</div>
 	<iframe class="app-frame" [src]="url" (loadend)="frameContentLoaded()" *ngIf="config.url != ''"></iframe>
