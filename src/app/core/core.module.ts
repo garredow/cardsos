@@ -12,6 +12,7 @@ import { AccountsAppModule } from '../accounts-app/accounts-app.module';
 import { BackupAppModule } from '../backup-app/backup-app.module';
 import { UpdatesAppModule } from '../updates-app/updates-app.module';
 import { ExhibitionAppModule } from '../exhibition-app/exhibition-app.module';
+import { VpnAppModule } from '../vpn-app/vpn-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -33,7 +34,8 @@ import { AppsService } from './apps.service';
     AccountsAppModule,
     BackupAppModule,
     UpdatesAppModule,
-    ExhibitionAppModule
+    ExhibitionAppModule,
+    VpnAppModule
   ],
   declarations: [
     CardComponent,
