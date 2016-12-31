@@ -11,6 +11,7 @@ import { BluetoothAppModule } from '../bluetooth-app/bluetooth-app.module';
 import { AccountsAppModule } from '../accounts-app/accounts-app.module';
 import { BackupAppModule } from '../backup-app/backup-app.module';
 import { UpdatesAppModule } from '../updates-app/updates-app.module';
+import { ExhibitionAppModule } from '../exhibition-app/exhibition-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -31,7 +32,8 @@ import { AppsService } from './apps.service';
     BluetoothAppModule,
     AccountsAppModule,
     BackupAppModule,
-    UpdatesAppModule
+    UpdatesAppModule,
+    ExhibitionAppModule
   ],
   declarations: [
     CardComponent,

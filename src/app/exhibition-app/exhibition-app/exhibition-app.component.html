@@ -1,0 +1,46 @@
+<div class="enyo-unselectable" class="container">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
+    <img class="icon" src="assets/icons/exhibition-64.png">
+    Exhibition
+  </div>
+  <div class="content">
+
+    <div class="onyx-groupbox">
+      <div class="onyx-groupbox-header">Applications</div>
+      <div class="flex-row">
+        <div class="label">Time</div>
+      </div>
+      <div class="flex-row">
+        <div class="label">Agenda</div>
+          <enyo-toggle-button></enyo-toggle-button>
+      </div>
+      <div class="flex-row">
+        <div class="label">Photos</div>
+          <enyo-toggle-button [isActive]="true"></enyo-toggle-button>
+      </div>
+      <div class="flex-row">
+        <div class="label">Project Macaw</div>
+          <enyo-toggle-button [isActive]="true"></enyo-toggle-button>
+      </div>
+      <div class="flex-row">
+        <div class="label">Govnah</div>
+          <enyo-toggle-button></enyo-toggle-button>
+      </div>
+      <div class="flex-row">
+        <div class="label">Facebook</div>
+          <enyo-toggle-button></enyo-toggle-button>
+      </div>
+    </div>
+
+    <div class="single-item">
+      <img src="assets/icons/appcatalog-64.png"> Find More...
+    </div>
+
+    <div class="sub-text">Tap to find other applications that support Exhibition Mode.</div>
+
+  </div>
+
+  <div>
+    <enyo-button label="Start Exhibition" style="width: 100%"></enyo-button>
+  </div>
+</div>
