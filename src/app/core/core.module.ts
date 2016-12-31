@@ -14,6 +14,7 @@ import { UpdatesAppModule } from '../updates-app/updates-app.module';
 import { ExhibitionAppModule } from '../exhibition-app/exhibition-app.module';
 import { VpnAppModule } from '../vpn-app/vpn-app.module';
 import { LocationAppModule } from '../location-app/location-app.module';
+import { TextassistAppModule } from '../textassist-app/textassist-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -37,7 +38,8 @@ import { AppsService } from './apps.service';
     UpdatesAppModule,
     ExhibitionAppModule,
     VpnAppModule,
-    LocationAppModule
+    LocationAppModule,
+    TextassistAppModule
   ],
   declarations: [
     CardComponent,
