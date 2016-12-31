@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'enyo-slider',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./enyo-slider.component.css']
 })
 export class EnyoSliderComponent implements OnInit {
-  position: number = 75;
+  @Input() position: number = 75;
   
   constructor() { }
 
