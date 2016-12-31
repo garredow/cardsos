@@ -1,0 +1,73 @@
+<div class="enyo-unselectable" class="container">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
+    <img class="icon" src="assets/icons/sound-64.png">
+    Sound Settings
+  </div>
+  <div class="content">
+
+    <div class="onyx-groupbox">
+      <div class="onyx-groupbox-header">Ringer Switch Off</div>
+      <div class="flex-row">
+        <div class="label">Rings & Alerts</div>
+        <div>SelectElement</div>
+      </div>
+    </div>
+
+    <div class="onyx-groupbox">
+      <div class="onyx-groupbox-header">Ringer Switch On</div>
+      <div class="flex-row">
+        <div class="label">Rings & Alerts</div>
+        <div>SelectElement</div>
+      </div>
+      <div class="flex-row">
+        <div class="label">System Sounds</div>
+        <enyo-toggle-button [isActive]="true"></enyo-toggle-button>
+      </div>
+    </div>
+
+    <div class="onyx-groupbox">
+      <div class="onyx-groupbox-header">Ring & Alert Tones</div>
+      <div class="flex-row">
+        <div class="label">Ringtone</div>
+        <div>SelectElement</div>
+      </div>
+      <div class="flex-row">
+        <div class="label">Alert</div>
+        <div>SelectElement</div>
+      </div>
+      <div class="flex-row">
+        <div class="label">Notify</div>
+        <div>SelectElement</div>
+      </div>
+    </div>
+
+    <div class="onyx-groupbox">
+      <div class="onyx-groupbox-header">System Notifications</div>
+      <div class="flex-row">
+        <div class="label">Low Battery</div>
+        <div>SelectElement</div>
+      </div>
+      <div class="flex-row">
+        <div class="label">Charger</div>
+        <div>SelectElement</div>
+      </div>
+    </div>
+
+    <div class="onyx-groupbox">
+      <div class="onyx-groupbox-header">Sound Volume Levels</div>
+      <div class="row" style="padding: 5px 0 10px 0">
+        <div style="padding: 8px">Ringtone</div>
+        <enyo-slider position="75"></enyo-slider>
+      </div>
+      <div class="row" style="padding: 5px 0 10px 0">
+        <div style="padding: 8px">System</div>
+        <enyo-slider position="30"></enyo-slider>
+      </div>
+      <div class="row" style="padding: 5px 0 10px 0">
+        <div style="padding: 8px">Media</div>
+        <enyo-slider position="15"></enyo-slider>
+      </div>
+    </div>
+    
+  </div>
+</div>

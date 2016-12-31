@@ -18,6 +18,7 @@
 		<vpn-app *ngSwitchCase="'vpn'"></vpn-app>
 		<location-app *ngSwitchCase="'location'"></location-app>
 		<textassist-app *ngSwitchCase="'textassist'"></textassist-app>
+		<sound-app *ngSwitchCase="'sound'"></sound-app>
 		<div *ngSwitchDefault>Default app</div>
 	</div>
 	<iframe class="app-frame" [src]="url" (loadend)="frameContentLoaded()" *ngIf="config.url != ''"></iframe>

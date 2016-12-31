@@ -103,6 +103,7 @@ export class LauncherComponent implements OnInit {
 					{ id: 'vpn', title: 'VPN', url: '', iconUrl: 'assets/icons/vpn-64.png' },
 					{ id: 'location', title: 'Location Services', url: '', iconUrl: 'assets/icons/location-64.png' },
 					{ id: 'textassist', title: 'Text Assist', url: '', iconUrl: 'assets/icons/textassist-64.png' },
+					{ id: 'sound', title: 'Sound Settings', url: '', iconUrl: 'assets/icons/sound-64.png' },
 				]
 			},
 		];

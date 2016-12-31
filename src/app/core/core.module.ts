@@ -15,6 +15,7 @@ import { ExhibitionAppModule } from '../exhibition-app/exhibition-app.module';
 import { VpnAppModule } from '../vpn-app/vpn-app.module';
 import { LocationAppModule } from '../location-app/location-app.module';
 import { TextassistAppModule } from '../textassist-app/textassist-app.module';
+import { SoundAppModule } from '../sound-app/sound-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -39,7 +40,8 @@ import { AppsService } from './apps.service';
     ExhibitionAppModule,
     VpnAppModule,
     LocationAppModule,
-    TextassistAppModule
+    TextassistAppModule,
+    SoundAppModule
   ],
   declarations: [
     CardComponent,
