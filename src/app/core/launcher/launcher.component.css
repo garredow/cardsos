@@ -63,8 +63,7 @@
 }
 .apps-container {
     flex: 1;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: hidden;
     white-space: nowrap;
 }
 .apps {
