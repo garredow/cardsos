@@ -4,7 +4,7 @@
     height: 100vh;
 }
 
-.content {
+.cards-container {
     flex: 1;
     white-space: nowrap;
     overflow-x: auto;
@@ -13,7 +13,7 @@
     /* Safari fix */
     height: calc(100vh - 74px);
 }
-.content.overview {
+.cards-container.overview {
     overflow-x: hidden;
 }
 
