@@ -25,6 +25,54 @@ body {
 	user-select: none;
 }
 
+/* Boot Screen */
+
+.boot-screen {
+	height: 100vh;
+	background-color: black;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+.boot-screen .images-container {
+	position: relative;
+	height: 200px;
+	width: 200px;
+}
+.boot-screen .images-container .top,
+.boot-screen .images-container .bottom {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.boot-screen .images-container .top {
+	opacity: 0;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+	animation-name: bootLogoFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+}
+
+@keyframes bootLogoFadeInOut {
+	0% {
+		opacity:0;
+	}
+	50% {
+		opacity:0;
+	}
+	95% {
+		opacity:1;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
 /* App Launcher */
 app-launcher {
 	transition: 300ms;
