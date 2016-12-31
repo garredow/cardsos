@@ -1,0 +1,35 @@
+<div class="enyo-unselectable" class="container">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
+    <img class="icon" src="assets/icons/datetime-64.png">
+    Date & Time
+  </div>
+  <div class="content">
+
+    <div class="onyx-groupbox">
+      <div class="onyx-groupbox-header">Time Format</div>
+      <div class="flex-row">
+        <div class="label">12 hour</div>
+        EnyoSelect
+      </div>
+    </div>
+
+    <div class="onyx-groupbox">
+      <div class="flex-row">
+        <div class="label">Network time</div>
+        <enyo-toggle-button isActive="true"></enyo-toggle-button>
+      </div>
+    </div>
+
+    <div class="sub-text">
+      {{ rightNow | date:'MMMM d, y, h:mm a'}}
+    </div>
+
+    <div class="onyx-groupbox">
+      <div class="flex-row">
+        <div class="label">Network time zone</div>
+        <enyo-toggle-button isActive="true"></enyo-toggle-button>
+      </div>
+    </div>
+
+  </div>
+</div>

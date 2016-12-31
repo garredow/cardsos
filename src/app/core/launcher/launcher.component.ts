@@ -104,6 +104,7 @@ export class LauncherComponent implements OnInit {
 					{ id: 'location', title: 'Location Services', url: '', iconUrl: 'assets/icons/location-64.png' },
 					{ id: 'textassist', title: 'Text Assist', url: '', iconUrl: 'assets/icons/textassist-64.png' },
 					{ id: 'sound', title: 'Sound Settings', url: '', iconUrl: 'assets/icons/sound-64.png' },
+					{ id: 'datetime', title: 'Date & Time', url: '', iconUrl: 'assets/icons/datetime-64.png' },
 				]
 			},
 		];
