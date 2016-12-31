@@ -98,6 +98,7 @@ export class LauncherComponent implements OnInit {
 					{ id: 'accounts', title: 'Accounts', url: '', iconUrl: 'assets/icons/accounts-64.png' },
 					{ id: 'settings', title: 'Settings', url: '', iconUrl: 'assets/icons/settings.png' },
 					{ id: 'update', title: 'System Updates', url: '', iconUrl: 'assets/icons/update.png' },
+					{ id: 'backup', title: 'Backups', url: '', iconUrl: 'assets/icons/backup-64.png' },
 				]
 			},
 		];
