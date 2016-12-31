@@ -8,6 +8,7 @@ import { BrowserAppModule } from '../browser-app/browser-app.module';
 import { ScreenlockAppModule } from '../screenlock-app/screenlock-app.module';
 import { WifiAppModule } from '../wifi-app/wifi-app.module';
 import { BluetoothAppModule } from '../bluetooth-app/bluetooth-app.module';
+import { AccountsAppModule } from '../accounts-app/accounts-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -25,7 +26,8 @@ import { AppsService } from './apps.service';
     BrowserAppModule,
     ScreenlockAppModule,
     WifiAppModule,
-    BluetoothAppModule
+    BluetoothAppModule,
+    AccountsAppModule
   ],
   declarations: [
     CardComponent,

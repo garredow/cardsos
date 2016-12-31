@@ -1,0 +1,14 @@
+<div class="enyo-unselectable" class="container">
+  <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
+    <img class="icon" src="assets/icons/accounts-64.png">
+    Accounts
+  </div>
+  <div class="content">
+    <div class="row" *ngFor="let account of accounts">
+      <img class="icon" [src]="'assets/enyo/images/accounts/' + account.id + '-48x48.png'">
+      <div class="info">
+        <div class="title">{{account.title}}</div>
+        <div class="username">{{account.username}}</div>
+    </div>
+  </div>
+</div>

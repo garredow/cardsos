@@ -11,6 +11,7 @@
 		<phone-app *ngSwitchCase="'phone'"></phone-app>
 		<screenlock-app *ngSwitchCase="'screenlock'"></screenlock-app>
 		<wifi-app *ngSwitchCase="'wifi'"></wifi-app>
+		<accounts-app *ngSwitchCase="'accounts'"></accounts-app>
 		<div *ngSwitchDefault>Default app</div>
 	</div>
 	<iframe class="app-frame" [src]="url" (loadend)="frameContentLoaded()" *ngIf="config.url != ''"></iframe>

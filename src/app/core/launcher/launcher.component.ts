@@ -95,7 +95,7 @@ export class LauncherComponent implements OnInit {
 					{ id: 'wifi', title: 'Wi-Fi', url: '', iconUrl: 'assets/icons/wifi-64.png' },
 					{ id: 'bluetooth', title: 'Bluetooth', url: '', iconUrl: 'assets/icons/bluetooth-64.png' },
 					{ id: 'screenlock', title: 'Screen & Lock', url: '', iconUrl: 'assets/icons/screenlock-64.png' },
-					{ id: 'accounts', title: 'Accounts', url: '', iconUrl: 'assets/icons/accounts.png' },
+					{ id: 'accounts', title: 'Accounts', url: '', iconUrl: 'assets/icons/accounts-64.png' },
 					{ id: 'settings', title: 'Settings', url: '', iconUrl: 'assets/icons/settings.png' },
 					{ id: 'update', title: 'System Updates', url: '', iconUrl: 'assets/icons/update.png' },
 				]
