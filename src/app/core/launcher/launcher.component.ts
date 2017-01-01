@@ -69,7 +69,7 @@ export class LauncherComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log('launcher', this._appsService.apps);
+		// console.log('launcher', this._appsService.apps);
 		this.panels = [
 			{
 				title: 'Applications', apps: [

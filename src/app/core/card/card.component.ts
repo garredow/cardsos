@@ -41,7 +41,7 @@ export class CardComponent implements OnInit, AfterViewInit {
 	}
 
 	loadApp() {
-		console.log('Loading app: ', this.config.id);
+		// console.log('Loading app: ', this.config.id);
 		// switch (this.config.id) {
 		// 	case 'phone':
 		// 		console.
