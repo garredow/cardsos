@@ -1,6 +1,8 @@
 <div class="app-menu">{{appName}}</div>
 <div class="clock">{{dmSettings.date | date:'h:mm'}}</div>
 <div class="device-menu-tab" (click)="toggleDeviceMenu()">
+	<img [src]="'assets/ui/' + bluetoothStatus.icon" *ngIf="bluetoothStatus.num > 0" style="margin-right: 3px">
+	<img [src]="'assets/ui/' + wifiState.icon" *ngIf="wifiState.state > 0" style="margin-right: -3px">
 	<img src="assets/ui/rssi-4.png">
 	<img [src]="batteryIconUrl">
 </div>
@@ -8,6 +10,23 @@
 <div class="device-menu" [ngClass]="{open: isDeviceMenuOpen}" *ngIf="isReady">
 	<div class="row">{{dmSettings.date | date:'fullDate'}}</div>
 	<div class="row">Battery: {{dmSettings.batteryLevel}}%</div>
+	<div class="row" (click)="toggleSubMenu('wifi')">
+		<div class="label">
+			Wi-Fi
+			<!--<div *ngIf="wifiState.state == 2" class="onyx-spinner onyx-dark" style="height: 32px; width: 32px;"></div>-->
+		</div>
+		<div class="status">{{wifiState.state >= 2 ? connectedNetworkSSID : wifiState.title}}</div>
+	</div>
+	<div class="sub-menu" *ngIf="showWifiSubMenu" [@fadeIn]="showWifiSubMenu">
+		<div class="sub-row" (click)="toggleWifiState()">Turn {{wifiState.state > 0 ? 'off' : 'on'}} Wi-Fi</div>
+		<div class="sub-row" *ngFor="let network of wifiNetworks" (click)="connectToWifiNetwork(network)" [@fadeIn]="wifiNetworks.length > 0">
+			<div class="label" [ngClass]="{'connected':network.connected}">{{network.ssid}}<br><span class="connecting" *ngIf="network.connecting">CONNECTING...</span></div>
+			<img *ngIf="network.connected" src="assets/enyo/images/wifi/checkmark.png">
+			<!--<img src="assets/enyo/images/wifi/lock.png">-->
+			<img [src]="'assets/ui/wifi-' + network.strength + '.png'">
+		</div>
+		<div class="sub-row">Wi-Fi Preferences</div>
+	</div>
 	<div class="row last" (click)="goFullScreen()">Go Full Screen</div>
 </div>
 
