@@ -104,10 +104,12 @@ export class StatusbarComponent implements OnInit {
 	}
 
 	toggleDeviceMenu() {
-		this.isDeviceMenuOpen = !this.isDeviceMenuOpen;
-
 		if (this.isDeviceMenuOpen) {
-
+			this.isDeviceMenuOpen = false;
+			this.showBluetoothSubMenu = false;
+			this.showWifiSubMenu = false;
+		} else {
+			this.isDeviceMenuOpen = true;
 		}
 	}
 

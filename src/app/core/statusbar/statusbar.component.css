@@ -47,6 +47,8 @@
     transform: translateY(-100vh);
     transition: 400ms ease-in-out;
     z-index: 150;
+    max-height: 85vh;
+    overflow-y: auto;
 }
 .device-menu.open {
     transform: translateY(0px);

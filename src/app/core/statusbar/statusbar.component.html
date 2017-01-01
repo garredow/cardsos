@@ -12,6 +12,7 @@
 	<div class="row">Battery: {{dmSettings.batteryLevel}}%</div>
 	<div class="row" (click)="toggleSubMenu('bluetooth')">
 		<div class="label">Bluetooth</div>
+		<!--<div *ngIf="bluetoothState.state == 1" class="onyx-spinner onyx-dark" style="height: 24px; width: 24px;"></div>-->
 		<div class="status">{{bluetoothState.state >= 3 ? connectedBluetoothDevice : bluetoothState.title}}</div>
 	</div>
 	<div class="sub-menu" *ngIf="showBluetoothSubMenu" [@fadeIn]="showBluetoothSubMenu">
@@ -20,8 +21,10 @@
 			<!--<img class="device-type" [src]="'assets/enyo/images/bluetooth/' + device.type + (device.connected ? '-connected.png' : '.png')">-->
 			<div class="label" [ngClass]="{'connected':device.connected}">{{device.name}}</div>
 			<img *ngIf="device.connected" src="assets/enyo/images/framework/checkmark.png" style="float:right">
-			<div *ngIf="device.connecting" class="onyx-spinner onyx-dark" style="height: 32px; width: 32px;"></div>
+			<div *ngIf="device.connecting" class="onyx-spinner onyx-dark" style="height: 24px; width: 24px;"></div>
 		</div>
+		<div class="sub-row" *ngIf="bluetoothState.state == 1">Searching for devices...</div>
+		<div class="sub-row">Bluetooth Preferences</div>
 	</div>
 	<div class="row" (click)="toggleSubMenu('wifi')">
 		<div class="label">
@@ -43,4 +46,4 @@
 	<div class="row last" (click)="goFullScreen()">Go Full Screen</div>
 </div>
 
-<div class="scrim" [ngClass]="{showing: isDeviceMenuOpen}" (click)="isDeviceMenuOpen = !isDeviceMenuOpen"></div>
+<div class="scrim" [ngClass]="{showing: isDeviceMenuOpen}" (click)="toggleDeviceMenu()"></div>
