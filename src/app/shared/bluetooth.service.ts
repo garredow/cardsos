@@ -47,7 +47,7 @@ export class BluetoothService {
 
       this._bluetoothDevicesSource.next(this._devices);
       this.setState(4);
-    }, 4000);
+    }, 3000);
   }
 
   public turnOn() {
@@ -80,7 +80,7 @@ export class BluetoothService {
         stateData = { state: 1, title: 'On', icon: 'bluetooth-on.png'};
         break;
       case 2:
-        stateData = { state: 2, title: 'Found Devices', icon: 'bluetooth-on.png'};
+        stateData = { state: 2, title: 'On', icon: 'bluetooth-on.png'};
         break;
       case 3:
         stateData = { state: 3, title: 'Connecting', icon: 'bluetooth-connecting.png'};

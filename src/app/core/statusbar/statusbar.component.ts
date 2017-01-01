@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, trigger, transition, style, animate } from '@angular/core';
 import { WiFiService } from '../../shared/wifi.service';
-import { WiFiNetwork, WiFiState } from '../../shared/interfaces';
+import { BluetoothService } from '../../shared/bluetooth.service';
+import { BluetoothDevice, BluetoothState, WiFiNetwork, WiFiState } from '../../shared/interfaces';
 
 @Component({
 	selector: 'status-bar',
 	templateUrl: './statusbar.component.html',
-	styleUrls: ['./statusbar.component.css'],
+  	styleUrls: ['../../../assets/enyo/css/enyo.css', '../../../assets/enyo/css/layout.css', '../../../assets/enyo/css/onyx.css', './statusbar.component.css'],
 	animations: [
 		trigger(
 			'fadeIn', [
@@ -30,15 +31,18 @@ export class StatusbarComponent implements OnInit {
 	updateTimer: any;
 
 	wifiNetworks: WiFiNetwork[] = [];
-	wifiState: WiFiState;
+	wifiState: WiFiState = new WiFiState();
 	connectedNetworkSSID: string = '';
 	showWifiSubMenu: boolean = false;
-	bluetoothStatus: Object = {};
+	
+	bluetoothState: BluetoothState = new BluetoothState();
+	bluetoothDevices: BluetoothDevice[] = [];
+	connectedBluetoothDevice: string = '';
 	showBluetoothSubMenu: boolean = false;
 
-	constructor(private _systemService: WiFiService) {
-		_systemService.state$.subscribe((state: WiFiState) => {
-			// console.log('statusbar', 'new wifi state', state);
+	constructor(private _bluetoothService: BluetoothService, private _wifiService: WiFiService) {
+		this.wifiState = _wifiService.getState();
+		_wifiService.state$.subscribe((state: WiFiState) => {
 			this.wifiState = state;
 
 			if (state.state >= 2) {
@@ -47,15 +51,26 @@ export class StatusbarComponent implements OnInit {
 			}
 		});
 
-		// this.wifiNetworks = _systemService.wifiNetworks;
-		_systemService.networks$.subscribe((networks: WiFiNetwork[]) => {
+		this.wifiNetworks = _wifiService.getNetworks();
+		_wifiService.networks$.subscribe((networks: WiFiNetwork[]) => {
 			// console.log('statusbar', 'wifi networks updated');
 			this.wifiNetworks = networks;
 		});
 
-		// _systemService.bluetoothStatus$.subscribe(status => {
-		// 	this.bluetoothStatus = status;
-		// });
+		this.bluetoothState = _bluetoothService.getState();
+		_bluetoothService.state$.subscribe((state: BluetoothState) => {
+			this.bluetoothState = state;
+
+			if (state.state >= 3) {
+				let device: BluetoothDevice = this.bluetoothDevices.find(a => a.connecting == true || a.connected == true);
+				this.connectedBluetoothDevice = device.name;
+			}
+		});
+
+		this.bluetoothDevices = _bluetoothService.getDevices();
+		_bluetoothService.devices$.subscribe((devices: BluetoothDevice[]) => {
+			this.bluetoothDevices = devices;
+		});
 	}
 
 	ngOnInit() {
@@ -69,8 +84,7 @@ export class StatusbarComponent implements OnInit {
 
 		this.isReady = true;
 
-		this._systemService.setState(0);
-		// this._systemService.setBluetoothStatus(0);
+		this._wifiService.setState(0);
 	}
 
 	checkBatteryStatus() {
@@ -110,14 +124,26 @@ export class StatusbarComponent implements OnInit {
 
 	toggleWifiState() {
 		if (this.wifiState.state == 0) {
-			this._systemService.turnOnWifi();
+			this._wifiService.turnOn();
 		} else {
-			this._systemService.turnOff();
+			this._wifiService.turnOff();
+		}
+	}
+
+	toggleBluetoothState() {
+		if (this.bluetoothState.state == 0) {
+			this._bluetoothService.turnOn();
+		} else {
+			this._bluetoothService.turnOff();
 		}
 	}
 
 	connectToWifiNetwork(network: WiFiNetwork) {
-		this._systemService.connectToNetwork(network.ssid);
+		this._wifiService.connectToNetwork(network.ssid);
+	}
+
+	connectToDevice(device: BluetoothDevice) {
+		this._bluetoothService.connectToDevice(device.id);
 	}
 
 	goFullScreen() {
