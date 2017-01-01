@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BluetoothService } from '../../shared/bluetooth.service';
+import { BluetoothDevice, BluetoothState } from '../../shared/interfaces';
 
 @Component({
   selector: 'bluetooth-app',
@@ -6,48 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../../assets/enyo/css/enyo.css', '../../../assets/enyo/css/layout.css', '../../../assets/enyo/css/onyx.css', './bluetooth-app.component.css']
 })
 export class BluetoothAppComponent implements OnInit {
-  powerupStage: number = 0;
-  devices = [];
+  bluetoothState: BluetoothState = new BluetoothState();
+  bluetoothDevices: BluetoothDevice[] = [];
+  connectedDevice: string = '';
   
-  constructor() { }
+  constructor(private _bluetoothService: BluetoothService) {
+    this.bluetoothState = _bluetoothService.getState();
+    _bluetoothService.state$.subscribe((state: BluetoothState) => {
+			this.bluetoothState = state;
+
+			if (state.state >= 3) {
+				let connectedDevice: BluetoothDevice = this.bluetoothDevices.find(a => a.connecting == true || a.connected == true);
+			}
+		});
+
+    this.bluetoothDevices = _bluetoothService.getDevices();
+    _bluetoothService.devices$.subscribe((devices: BluetoothDevice[]) => {
+			this.bluetoothDevices = devices;
+		});
+  }
 
   ngOnInit() {
   }
 
   handleBluetoothStateChange(state: boolean) {
-    console.log('handleBluetoothStateChange', state);
     if (state) {
-      this.startPoweringUp();
+      this._bluetoothService.turnOn();
     } else {
-      this.devices = [];
-      this.powerupStage = 0;
+      this._bluetoothService.turnOff();
     }
   }
 
-  startPoweringUp() {
-    this.powerupStage = 1;
-
-    let step2 = setTimeout(() => {
-      this.powerupStage = 2;
-
-      this.devices = [
-        {name: 'BlueBuds X', type: 'headphones', connecting: false, connected: false},
-        {name: 'Toyota Corolla', type: 'car', connecting: false, connected: false},
-        {name: 'HP Keyboard', type: 'keyboard', connecting: false, connected: false}
-      ];
-    }, 2000);
-
-    let step3 = setTimeout(() => {
-      this.powerupStage = 3;
-
-      this.devices[0].connecting = true;
-    }, 4000);
-
-    let step4 = setTimeout(() => {
-      this.powerupStage = 4;
-
-      this.devices[0].connecting = false;
-      this.devices[0].connected = true;
-    }, 6000);
+  connectToDevice(device: BluetoothDevice) {
+    this._bluetoothService.connectToDevice(device.id);
   }
 }

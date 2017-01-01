@@ -2,32 +2,32 @@
   <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
     <img class="icon" src="assets/icons/bluetooth-64.png">
     <div>Bluetooth</div>
-    <enyo-toggle-button style="float:right" (onStateChange)="handleBluetoothStateChange($event)"></enyo-toggle-button>
+    <enyo-toggle-button style="float:right" (onStateChange)="handleBluetoothStateChange($event)" [isActive]="bluetoothState.state > 0"></enyo-toggle-button>
   </div>
   <div class="content">
-    <div class="sub-text" *ngIf="powerupStage == 0">Bluetooth is off, no devices connected.</div>
+    <div class="sub-text" *ngIf="bluetoothState.state == 0">Bluetooth is off, no devices connected.</div>
 
-    <div class="sub-text" *ngIf="powerupStage == 1">
+    <!--<div class="sub-text" *ngIf="bluetoothState.state == 1">
       <div class="onyx-spinner onyx-light"></div>
       Bluetooth is turning on...
-    </div>
+    </div>-->
 
-    <div class="sub-text" *ngIf="powerupStage == 2">
+    <div class="sub-text" *ngIf="bluetoothState.state == 1">
       <div class="onyx-spinner onyx-light"></div>
       Making your phone discoverable and visible to others...
     </div>
 
-    <div class="sub-text" *ngIf="powerupStage >= 3">Your phone is now discoverable.</div>
+    <div class="sub-text" *ngIf="bluetoothState.state >= 2">Your phone is now discoverable.</div>
 
-    <div class="onyx-groupbox" *ngIf="powerupStage > 0">
+    <div class="onyx-groupbox" *ngIf="bluetoothState.state > 0">
       <div class="onyx-groupbox-header">Devices</div>
-      <div class="flex-row" *ngFor="let device of devices">
+      <div class="flex-row" *ngFor="let device of bluetoothDevices" (click)="connectToDevice(device)">
         <img class="device-type" [src]="'assets/enyo/images/bluetooth/' + device.type + (device.connected ? '-connected.png' : '.png')">
         <div class="label" [ngClass]="{'connected':device.connected}">{{device.name}}</div>
         <img *ngIf="device.connected" src="assets/enyo/images/framework/checkmark.png" style="float:right">
         <div *ngIf="device.connecting" class="onyx-spinner onyx-light" style="height: 32px; width: 32px;"></div>
       </div>
-      <div class="flex-row" *ngIf="powerupStage >= 2">
+      <div class="flex-row" *ngIf="bluetoothState.state >= 2">
         <img src="assets/enyo/images/framework/list-icon-add-item.png" style="width: 18px; margin: 0 16px 0 8px;"> Add device
     </div>
   </div>

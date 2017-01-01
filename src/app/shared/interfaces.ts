@@ -24,3 +24,19 @@ export class WiFiState {
 	public icon: string;
 	public strength: number;
 }
+
+@Injectable()
+export class BluetoothDevice {
+	public id: number;
+	public name: string;
+	public type: string;
+	public connecting: boolean;
+	public connected: boolean;
+}
+
+@Injectable()
+export class BluetoothState {
+	public state: number;
+	public title: string;
+	public icon: string;
+}
