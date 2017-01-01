@@ -7,3 +7,20 @@ export class AppConfig {
 	public url: string;
 	public iconUrl: string;
 }
+
+@Injectable()
+export class WiFiNetwork {
+	public ssid: string;
+	public strength: number;
+	public locked: boolean;
+	public connecting: boolean;
+	public connected: boolean;
+}
+
+@Injectable()
+export class WiFiState {
+	public state: number;
+	public title: string;
+	public icon: string;
+	public strength: number;
+}

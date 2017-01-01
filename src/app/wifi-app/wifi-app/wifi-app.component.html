@@ -2,25 +2,25 @@
   <div class="onyx onyx-toolbar onyx-toolbar-inline app-header">
     <img class="icon" src="assets/icons/wifi-64.png">
     <div>Wi-Fi</div>
-    <enyo-toggle-button style="float:right" (onStateChange)="handleWifiStateChange($event)"></enyo-toggle-button>
+    <enyo-toggle-button style="float:right" (onStateChange)="handleWifiStateChange($event)" [isActive]="wifiState.state > 0"></enyo-toggle-button>
   </div>
   <div class="content">
-    <div class="sub-text" *ngIf="powerupStage == 0">Wi-Fi is turned off.</div>
-    <div class="sub-text" *ngIf="powerupStage > 0">Your phone automatically connects to known networks.</div>
+    <div class="sub-text" *ngIf="wifiState.state == 0">Wi-Fi is turned off.</div>
+    <div class="sub-text" *ngIf="wifiState.state > 0">Your phone automatically connects to known networks.</div>
 
-    <div class="onyx-groupbox" *ngIf="powerupStage > 0">
+    <div class="onyx-groupbox" *ngIf="wifiState.state > 0">
       <div class="onyx-groupbox-header">Choose a Network</div>
-      <div class="flex-row" *ngFor="let network of networks">
+      <div class="flex-row" *ngFor="let network of wifiNetworks" (click)="connectToNetwork(network)">
         <div class="label" [ngClass]="{'connected':network.connected}">{{network.ssid}}<br><span class="connecting" *ngIf="network.connecting">CONNECTING...</span></div>
         <!--<div *ngIf="network.connecting" class="onyx-spinner onyx-light" style="height: 32px; width: 32px;"></div>-->
         <img *ngIf="network.connected" src="assets/enyo/images/wifi/checkmark.png">
         <img src="assets/enyo/images/wifi/lock.png">
-        <img [src]="'assets/enyo/images/wifi/wifi-' + network.strength + '.png'">
+        <img [src]="'assets/enyo/images/wifi/wifi-3.png'">
       </div>
-      <div class="flex-row" *ngIf="powerupStage == 1">
+      <!--<div class="flex-row" *ngIf="wifiState.state == 1">
         <div class="label">Searching for networks...</div>
         <div class="onyx-spinner onyx-light" style="height: 32px; width: 32px;"></div>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
