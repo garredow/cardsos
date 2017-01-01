@@ -49,7 +49,7 @@ export class WiFiService {
     }, 4000);
   }
 
-  public turnOnWifi() {
+  public turnOn() {
     this._networksSource.next(this._networks);
     this.setState(1);
   }
