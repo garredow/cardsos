@@ -7,14 +7,9 @@
   <div class="content">
     <div class="sub-text" *ngIf="bluetoothState.state == 0">Bluetooth is off, no devices connected.</div>
 
-    <!--<div class="sub-text" *ngIf="bluetoothState.state == 1">
-      <div class="onyx-spinner onyx-light"></div>
-      Bluetooth is turning on...
-    </div>-->
-
     <div class="sub-text" *ngIf="bluetoothState.state == 1">
       <div class="onyx-spinner onyx-light"></div>
-      Making your phone discoverable and visible to others...
+      Bluetooth is turning on...
     </div>
 
     <div class="sub-text" *ngIf="bluetoothState.state >= 2">Your phone is now discoverable.</div>

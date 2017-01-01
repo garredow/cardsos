@@ -77,7 +77,7 @@ export class BluetoothService {
         stateData = { state: 0, title: 'Off', icon: '',};
         break;
       case 1:
-        stateData = { state: 1, title: 'On', icon: 'bluetooth-on.png'};
+        stateData = { state: 1, title: 'Off', icon: ''};
         break;
       case 2:
         stateData = { state: 2, title: 'On', icon: 'bluetooth-on.png'};
