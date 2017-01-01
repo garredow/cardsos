@@ -3,22 +3,19 @@
     height: 32px;
     background-color: #000;
     color: #fff;
-    /*text-align: center;*/
-    font-weight: 500;
     padding: 4px 5px;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    /*justify-content: space-between;*/
 }
 .app-menu {
     flex: 1;
     line-height: 24px;
+    font-weight: 500;
 }
 .clock {
-    /*text-align: center;*/
-    /*flex: 1;*/
     line-height: 24px;
+    font-weight: 500;
 }
 .device-menu-tab {
     flex: 1;
@@ -27,7 +24,6 @@
 }
 .device-menu-tab img {
     height: 20px;
-    /*margin-left: 5px;*/
 }
 
 /* Device Menu */
@@ -36,9 +32,8 @@
     position: absolute;
     top: 32px;
     right: 0px;
-    /*height: 200px;*/
-    width: 70vw;
-    max-width: 300px;
+    width: 85%;
+    max-width: 330px;
     background-color: rgba(0,0,0,.85);
     /*border: 30px;*/
     /*border-image: url('assets/ui/popup-bg.png');*/
@@ -49,26 +44,36 @@
     z-index: 150;
     max-height: 85vh;
     overflow-y: auto;
+    font-weight: 400;
 }
 .device-menu.open {
     transform: translateY(0px);
 }
 .device-menu .row,
 .device-menu .sub-row {
-    padding: 15px;
+    padding: 0 15px;
     border-bottom: 1px solid rgba(255,255,255,.15);
-    font-weight: 300;
     font-size: 1.1em;
     color: #eaeaea;
     display: flex;
     align-items: center;
+    height: 52px;
+}
+.device-menu .row > .flex,
+.device-menu .sub-row > .flex {
+    flex: 1;
 }
 .device-menu .row.last {
     border: none;
 }
 .device-menu .sub-row > .label,
 .device-menu .row > .label {
-    flex: 1;
+    font-weight: 500;
+}
+.device-menu .row > .onyx-spinner {
+    height: 24px;
+    width: 24px;
+    margin-left: 5px;
 }
 .device-menu .sub-row > .status,
 .device-menu .row > .status {

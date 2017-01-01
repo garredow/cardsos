@@ -27,7 +27,7 @@
 			<div class="label" [ngClass]="{'connected':network.connected}">{{network.ssid}}<br><span class="connecting" *ngIf="network.connecting">CONNECTING...</span></div>
 			<div class="flex"></div>
 			<img *ngIf="network.connected" src="assets/enyo/images/wifi/checkmark.png">
-			<!--<img src="assets/enyo/images/wifi/lock.png">-->
+			<img *ngIf="network.locked" src="assets/ui/lock.png">
 			<img [src]="'assets/ui/wifi-' + network.strength + '.png'">
 		</div>
 		<div class="sub-row">Wi-Fi Preferences</div>
