@@ -45,7 +45,7 @@ export class StatusbarComponent implements OnInit {
 		_wifiService.state$.subscribe((state: WiFiState) => {
 			this.wifiState = state;
 
-			if (state.state >= 2) {
+			if (state.state >= 3) {
 				let connectedNetwork: WiFiNetwork = this.wifiNetworks.find(a => a.connecting == true || a.connected == true);
 				this.connectedNetworkSSID = connectedNetwork.ssid;
 			}

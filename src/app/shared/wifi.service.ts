@@ -24,7 +24,7 @@ export class WiFiService {
       network.connected = false;
     });
 
-    this.setState(1);
+    // this.setState(1);
   }
 
   public connectToNetwork(ssid: string) {
@@ -37,7 +37,7 @@ export class WiFiService {
     let index = this._networks.findIndex(a => a.ssid == ssid);
     this._networks[index].connecting = true;
     this._networksSource.next(this._networks);
-    this.setState(2);
+    this.setState(3);
 
     this.isConnecting = true;
     setTimeout(() => {
@@ -45,13 +45,17 @@ export class WiFiService {
       this._networks[index].connected = true;
 
       this._networksSource.next(this._networks);
-      this.setState(3);
+      this.setState(4);
     }, 4000);
   }
 
   public turnOn() {
-    this._networksSource.next(this._networks);
     this.setState(1);
+
+    setTimeout(() => {
+      this.setState(2);
+      this._networksSource.next(this._networks);
+    }, 3000);
   }
 
   public turnOff() {
@@ -75,10 +79,13 @@ export class WiFiService {
         stateData = { state: 1, title: 'On', icon: 'wifi-0.png', strength: 0};
         break;
       case 2:
-        stateData = { state: 2, title: 'Connecting', icon: 'wifi-connecting.png', strength: 0};
+        stateData = { state: 2, title: 'On', icon: 'wifi-0.png', strength: 0};
         break;
       case 3:
-        stateData = { state: 3, title: 'Connected', icon: 'wifi-3.png', strength: 0};
+        stateData = { state: 3, title: 'Connecting', icon: 'wifi-connecting.png', strength: 0};
+        break;
+      case 4:
+        stateData = { state: 4, title: 'Connected', icon: 'wifi-3.png', strength: 0};
         this.isConnecting = false;
         break;
     }
