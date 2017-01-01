@@ -34,9 +34,12 @@
     right: 0px;
     width: 85%;
     max-width: 330px;
-    background-color: rgba(0,0,0,.85);
-    /*border: 30px;*/
-    /*border-image: url('assets/ui/popup-bg.png');*/
+    /*background-color: rgba(0,0,0,.85);*/
+    /*border: 24px;*/
+    /*-webkit-border-image: url('assets/ui/system-menu-background.png') 33 38 46 39 stretch;*/
+    /*border-image: url('assets/ui/system-menu-background.png') 33 38 46 39 stretch;*/
+    /*border-style: solid;*/
+    background: #4C4C4C url(assets/enyo/layout/onyx/images/gradient.png) repeat-x 0 bottom;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     transform: translateY(-100vh);
@@ -45,6 +48,9 @@
     max-height: 85vh;
     overflow-y: auto;
     font-weight: 400;
+}
+.device-menu .content-wrapper {
+    margin: 0;
 }
 .device-menu.open {
     transform: translateY(0px);

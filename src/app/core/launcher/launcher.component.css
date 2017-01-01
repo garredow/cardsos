@@ -55,7 +55,7 @@
     line-height: 35px;
     color: #fff;
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: 500;
 }
 .header img {
     margin: 0 20px;
@@ -92,4 +92,5 @@
     height: 50px;
     color: #fff;
     font-size: .9em;
+    font-weight: 500;
 }
