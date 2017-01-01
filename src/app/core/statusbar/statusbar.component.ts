@@ -34,6 +34,8 @@ export class StatusbarComponent implements OnInit {
 	wifiState: WiFiState = new WiFiState();
 	connectedNetworkSSID: string = '';
 	showWifiSubMenu: boolean = false;
+
+	showVPNSubMenu: boolean = false;
 	
 	bluetoothState: BluetoothState = new BluetoothState();
 	bluetoothDevices: BluetoothDevice[] = [];
@@ -117,6 +119,9 @@ export class StatusbarComponent implements OnInit {
 		switch (menu) {
 			case 'wifi':
 				this.showWifiSubMenu = !this.showWifiSubMenu;
+				break;
+			case 'vpn':
+				this.showVPNSubMenu = !this.showVPNSubMenu;
 				break;
 			case 'bluetooth':
 				this.showBluetoothSubMenu = !this.showBluetoothSubMenu;

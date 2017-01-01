@@ -33,6 +33,16 @@
 		<div class="sub-row">Wi-Fi Preferences</div>
 	</div>
 
+	<!-- VPN -->
+	<div class="row" (click)="toggleSubMenu('vpn')">
+		<div class="label">VPN</div>
+		<div class="flex"></div>
+		<div class="status">Off</div>
+	</div>
+	<div class="sub-menu" *ngIf="showVPNSubMenu" [@fadeIn]="showVPNSubMenu">
+		<div class="sub-row">VPN Preferences</div>
+	</div>
+
 	<!-- Bluetooth -->
 	<div class="row" (click)="toggleSubMenu('bluetooth')">
 		<div class="label">Bluetooth</div>
