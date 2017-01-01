@@ -1,8 +1,6 @@
 :host {
     display: flex;
     flex-direction: column;
-    /*background-color: rgba(0,0,0,.5);*/
-    /*background-image: url('assets/ui/launcher-bg.png');*/
     height: calc(100% - 32px);
     width: 100%;
     position: absolute;
@@ -19,22 +17,27 @@
     overflow-y: hidden;
     white-space: nowrap;
 
-    -webkit-scroll-snap-points-x: repeat(100%);
+    display: flex;
+    /*will-change: scroll-position;*/
+
+    /*-webkit-scroll-snap-points-x: repeat(100%);
     scroll-snap-points-x: repeat(100vw);
     -webkit-scroll-snap-destination: 0% 100%;
     scroll-snap-destination: 0% 100%;
     -webkit-scroll-snap-type: mandatory;
     scroll-snap-type: mandatory;
     scroll-snap-coordinate: 100px 0px;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;*/
 }
 
 .panel {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     height: calc(100vh - 74px);
     width: 100vw;
+    min-width: 100vw;
     vertical-align: top;
-    border-radius: 25px;
+    border-radius: 20px;
     margin-right: 10px;
     background-image: url('assets/ui/launcher-bg.png');
 }
@@ -44,7 +47,6 @@
 
 .header {
     text-align: center;
-    /*border-bottom: 1px solid red;*/
     display: flex;
     padding: 10px 0;
 }
@@ -53,6 +55,7 @@
     line-height: 35px;
     color: #fff;
     font-size: 1.2em;
+    font-weight: bold;
 }
 .header img {
     margin: 0 20px;
@@ -72,21 +75,21 @@
     width: 100%;
     padding: 15px;
     box-sizing: border-box;
-    /*border: 1px solid red;*/
     white-space: normal;
+    overflow-y: auto;
 }
 
 .app {
     display: inline-block;
     width: 25%;
-    /*margin-bottom: 25px;*/
     text-align: center;
     vertical-align: top;
 }
 .app img {
-    width: 72px;
+    width: 64px;
 }
 .app .title {
     height: 50px;
     color: #fff;
+    font-size: .9em;
 }

@@ -81,13 +81,13 @@ export class LauncherComponent implements OnInit {
 					{ id: 'messaging', title: 'Messaging', url: '', iconUrl: 'assets/icons/messaging.png' },
 					{ id: 'notes', title: 'Notes', url: '', iconUrl: 'assets/icons/notes.png' },
 					{ id: 'phone', title: 'Phone', url: '', iconUrl: 'assets/icons/phone.png' },
-					{ id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png' },
-					{ id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png' },
 				]
 			},
 			{
-				title: 'Extras', apps: [
-					{ id: 'devmode', title: 'Dev Mode', url: '', iconUrl: 'assets/icons/devmode.png' },
+				title: 'Garrett\'s Apps', apps: [
+					
+					{ id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png' },
+					{ id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png' },
 				]
 			},
 			{
@@ -104,6 +104,7 @@ export class LauncherComponent implements OnInit {
 					{ id: 'textassist', title: 'Text Assist', url: '', iconUrl: 'assets/icons/textassist-64.png' },
 					{ id: 'sound', title: 'Sound Settings', url: '', iconUrl: 'assets/icons/sound-64.png' },
 					{ id: 'datetime', title: 'Date & Time', url: '', iconUrl: 'assets/icons/datetime-64.png' },
+					{ id: 'devmode', title: 'Dev Mode', url: '', iconUrl: 'assets/icons/devmode.png' },
 				]
 			},
 		];
