@@ -73,21 +73,21 @@ export class LauncherComponent implements OnInit {
 		this.panels = [
 			{
 				title: 'Applications', apps: [
-					{ id: 'calculator', title: 'Calculator', url: '', iconUrl: 'assets/icons/calculator.png' },
-					{ id: 'calendar', title: 'Calendar', url: '', iconUrl: 'assets/icons/calendar.png' },
-					{ id: 'clock', title: 'Clock', url: '', iconUrl: 'assets/icons/clock.png' },
-					{ id: 'contacts', title: 'Contacts', url: '', iconUrl: 'assets/icons/contacts.png' },
-					{ id: 'email', title: 'Email', url: '', iconUrl: 'assets/icons/email.png' },
-					{ id: 'messaging', title: 'Messaging', url: '', iconUrl: 'assets/icons/messaging.png' },
-					{ id: 'notes', title: 'Notes', url: '', iconUrl: 'assets/icons/notes.png' },
-					{ id: 'phone', title: 'Phone', url: '', iconUrl: 'assets/icons/phone.png' },
+					{ id: 'calculator', title: 'Calculator', url: '', iconUrl: 'assets/icons/calculator-64.png' },
+					{ id: 'calendar', title: 'Calendar', url: '', iconUrl: 'assets/icons/calendar-64.png' },
+					{ id: 'clock', title: 'Clock', url: '', iconUrl: 'assets/icons/clock-64.png' },
+					{ id: 'contacts', title: 'Contacts', url: '', iconUrl: 'assets/icons/contacts-64.png' },
+					{ id: 'email', title: 'Email', url: '', iconUrl: 'assets/icons/email-64.png' },
+					{ id: 'messaging', title: 'Messaging', url: '', iconUrl: 'assets/icons/messaging-64.png' },
+					{ id: 'notes', title: 'Notes', url: '', iconUrl: 'assets/icons/notes-64.png' },
+					{ id: 'phone', title: 'Phone', url: '', iconUrl: 'assets/icons/phone-64.png' },
 				]
 			},
 			{
 				title: 'Garrett\'s Apps', apps: [
 					
-					{ id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png' },
-					{ id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png' },
+					{ id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts-256.png' },
+					{ id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather-64.png' },
 				]
 			},
 			{
@@ -104,7 +104,7 @@ export class LauncherComponent implements OnInit {
 					{ id: 'textassist', title: 'Text Assist', url: '', iconUrl: 'assets/icons/textassist-64.png' },
 					{ id: 'sound', title: 'Sound Settings', url: '', iconUrl: 'assets/icons/sound-64.png' },
 					{ id: 'datetime', title: 'Date & Time', url: '', iconUrl: 'assets/icons/datetime-64.png' },
-					{ id: 'devmode', title: 'Dev Mode', url: '', iconUrl: 'assets/icons/devmode.png' },
+					{ id: 'devmode', title: 'Dev Mode', url: '', iconUrl: 'assets/icons/devmode-64.png' },
 				]
 			},
 		];
