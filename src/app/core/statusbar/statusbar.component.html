@@ -9,10 +9,10 @@
 
 <div class="device-menu" [ngClass]="{open: isDeviceMenuOpen}" *ngIf="isReady">
 	<!-- Date -->
-	<div class="row">{{dmSettings.date | date:'fullDate'}}</div>
+	<div class="row" style="opacity: .6">{{dmSettings.date | date:'fullDate'}}</div>
 
 	<!-- Battery -->
-	<div class="row">Battery: {{dmSettings.batteryLevel}}%</div>
+	<div class="row" style="opacity: .6">Battery: {{dmSettings.batteryLevel}}%</div>
 
 	<!-- Wi-Fi -->
 	<div class="row" (click)="toggleSubMenu('wifi')">

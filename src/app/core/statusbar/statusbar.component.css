@@ -39,15 +39,25 @@
     /*-webkit-border-image: url('assets/ui/system-menu-background.png') 33 38 46 39 stretch;*/
     /*border-image: url('assets/ui/system-menu-background.png') 33 38 46 39 stretch;*/
     /*border-style: solid;*/
-    background: #4C4C4C url(assets/enyo/layout/onyx/images/gradient.png) repeat-x 0 bottom;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    /*background: #4C4C4C url(assets/enyo/layout/onyx/images/gradient.png) repeat-x 0 bottom;*/
+    /*border-bottom-left-radius: 25px;*/
+    /*border-bottom-right-radius: 25px;*/
     transform: translateY(-100vh);
     transition: 400ms ease-in-out;
     z-index: 150;
     max-height: 85vh;
     overflow-y: auto;
     font-weight: 400;
+
+    border-radius: 25px;
+    background: rgba(69,69,69,1);
+    background: -moz-linear-gradient(top, rgba(69,69,69,1) 0%, rgba(35,35,35,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(69,69,69,1)), color-stop(100%, rgba(35,35,35,1)));
+    background: -webkit-linear-gradient(top, rgba(69,69,69,1) 0%, rgba(35,35,35,1) 100%);
+    background: -o-linear-gradient(top, rgba(69,69,69,1) 0%, rgba(35,35,35,1) 100%);
+    background: -ms-linear-gradient(top, rgba(69,69,69,1) 0%, rgba(35,35,35,1) 100%);
+    background: linear-gradient(to bottom, rgba(69,69,69,1) 0%, rgba(35,35,35,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#454545', endColorstr='#232323', GradientType=0 );
 }
 .device-menu .content-wrapper {
     margin: 0;
@@ -57,8 +67,9 @@
 }
 .device-menu .row,
 .device-menu .sub-row {
-    padding: 0 15px;
-    border-bottom: 1px solid rgba(255,255,255,.15);
+    padding: 0 5px;
+    margin: 0 10px;
+    border-bottom: 2px solid rgba(0,0,0,.15);
     font-size: 1.1em;
     color: #eaeaea;
     display: flex;
@@ -74,7 +85,7 @@
 }
 .device-menu .sub-row > .label,
 .device-menu .row > .label {
-    font-weight: 500;
+    font-weight: 400;
 }
 .device-menu .row > .onyx-spinner {
     height: 24px;
@@ -92,7 +103,8 @@
     margin-left: 10px;
 }
 .device-menu .sub-row {
-    margin-left: 15px;
+    /*margin-left: 15px;*/
+    padding-left: 20px;
 }
 
 .device-menu .connecting {
