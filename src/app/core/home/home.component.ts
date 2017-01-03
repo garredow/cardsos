@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer, Inject } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer, Inject, trigger, state, style, transition, animate, keyframes, AnimationTransitionEvent } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { StatusbarComponent } from '../statusbar/statusbar.component';
 import { CardComponent } from '../card/card.component';
@@ -10,6 +10,23 @@ import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ng2-pag
 	selector: 'app-home',
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.css'],
+	animations: [
+		trigger('action', [
+			state('inactive', style({
+				opacity: 0
+			})),
+			state('active', style({
+				opacity: 0
+			})),
+			transition('inactive => active', [
+				animate(400, keyframes([
+					style({opacity: 0, offset: 0}),
+					style({opacity: 1, offset: .5}),
+					style({opacity: 0, offset: 1}),
+				]))
+			])
+		])
+	]
 })
 export class HomeComponent implements OnInit {
 	isCardView: boolean = true;
@@ -19,6 +36,9 @@ export class HomeComponent implements OnInit {
 	apps: AppConfig[] = [];
 	quickLaunchApps: any[];
 	appName: string;
+	navStateLeft: string = 'inactive';
+	navStateCenter: string = 'inactive';
+	navStateRight: string = 'inactive';
 	@ViewChild('cardsContainer') scroller: ElementRef;
 
 	constructor(private _rd: Renderer, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: Document) {
@@ -87,9 +107,10 @@ export class HomeComponent implements OnInit {
 		];
 	}
 
-	handleHomeTapped() {
-		// console.log('ele', this.scroller.nativeElement);
-		// this._rd.setElementProperty(this.scroller.nativeElement, 'scrollLeft', 100);
+	navHome() {
+		this.navStateCenter = 'active';
+		this.navStateRight = 'active';
+		this.navStateLeft = 'active';
 
 		if (this.isLauncherOpen) {
 			this.isLauncherOpen = false;
@@ -100,6 +121,36 @@ export class HomeComponent implements OnInit {
 			// console.log('Going into card view');
 			this.appName = '';
 			this.isCardView = true;
+		}
+	}
+
+	navBack() {
+		this.navStateRight = 'active';
+
+		setTimeout(() => {
+			this.navStateCenter = 'active';
+		}, 100);
+
+		setTimeout(() => {
+			this.navStateLeft = 'active';
+		}, 200);
+	}
+
+	navForward() {
+		this.navStateLeft = 'active';
+
+		setTimeout(() => {
+			this.navStateCenter = 'active';
+		}, 100);
+
+		setTimeout(() => {
+			this.navStateRight = 'active';
+		}, 200);
+	}
+	
+	animationDone(ev: AnimationTransitionEvent, button) {
+		if (ev.toState === 'active') {
+			this[button] = 'inactive';
 		}
 	}
 
@@ -120,7 +171,7 @@ export class HomeComponent implements OnInit {
 	}
 
 	openAppFromLauncher(app) {
-		this.handleHomeTapped();
+		this.isLauncherOpen = false;
 
 		let timer = setTimeout(() => {
 			this.openApp(app);

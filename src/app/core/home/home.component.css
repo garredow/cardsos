@@ -100,7 +100,20 @@
     flex: 1;
 }
 .navbar .btn-home {
-    line-height: 42px;
+    position: relative;
+    width: 114px;
+}
+.navbar .btn-home > .top,
+.navbar .btn-home > .bottom {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 3px;
+}
+.navbar .btn-home > .top > img {
+    opacity: 0;
 }
 
 app-card.overview {
