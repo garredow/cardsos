@@ -24,12 +24,12 @@
 	<div class="btn-home" (click)="navHome()">
 		<div class="bottom">
 			<img [src]="'assets/ui/navbar/left-dark.png'">
-			<img [src]="'assets/ui/navbar/center-dark.png'" style="margin: 0 -4px">
+			<img [src]="'assets/ui/navbar/center-dark.png'">
 			<img [src]="'assets/ui/navbar/right-dark.png'">
 		</div>
 		<div class="top">
 			<img [src]="'assets/ui/navbar/left-bright.png'" [@action]="navStateLeft" (@action.done)="animationDone($event, 'navStateLeft')">
-			<img [src]="'assets/ui/navbar/center-bright.png'" [@action]="navStateCenter" (@action.done)="animationDone($event, 'navStateCenter')" style="margin: 0 -4px">
+			<img [src]="'assets/ui/navbar/center-bright.png'" [@action]="navStateCenter" (@action.done)="animationDone($event, 'navStateCenter')">
 			<img [src]="'assets/ui/navbar/right-bright.png'" [@action]="navStateRight" (@action.done)="animationDone($event, 'navStateRight')">
 		</div>
 	</div>

@@ -102,6 +102,7 @@
 .navbar .btn-home {
     position: relative;
     width: 114px;
+    font-size: 0;
 }
 .navbar .btn-home > .top,
 .navbar .btn-home > .bottom {
