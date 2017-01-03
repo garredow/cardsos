@@ -17,6 +17,7 @@ import { LocationAppModule } from '../location-app/location-app.module';
 import { TextassistAppModule } from '../textassist-app/textassist-app.module';
 import { SoundAppModule } from '../sound-app/sound-app.module';
 import { DatetimeAppModule } from '../datetime-app/datetime-app.module';
+import { ClockAppModule } from '../clock-app/clock-app.module';
 
 import { CardComponent } from './card/card.component';
 import { DeviceMenuComponent } from './devicemenu/devicemenu.component';
@@ -43,7 +44,8 @@ import { AppsService } from './apps.service';
     LocationAppModule,
     TextassistAppModule,
     SoundAppModule,
-    DatetimeAppModule
+    DatetimeAppModule,
+    ClockAppModule
   ],
   declarations: [
     CardComponent,

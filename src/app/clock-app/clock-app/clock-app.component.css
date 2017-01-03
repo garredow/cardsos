@@ -1,0 +1,57 @@
+:host {
+    display: block;
+    height: 100%;
+    background-color: #EAEAEA;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #000;
+}
+.container > .app-header {
+    padding: 2px 10px;
+}
+.container > .app-header > .icon {
+    height: 32px;
+    width: 32px;
+}
+.container .content {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.clock {
+    position: relative;
+    height: 190px;
+    width: 320px;
+    margin: 0 auto;
+    background: url('assets/enyo/images/clock/flippers-portrait.png') center no-repeat;
+}
+.clock .ampm {
+    position: absolute;
+    top: 118px;
+    left: 14px;
+}
+.clock .digit {
+    position: absolute;
+    top: 15px;
+}

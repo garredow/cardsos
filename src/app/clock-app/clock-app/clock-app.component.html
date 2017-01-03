@@ -1,0 +1,12 @@
+<div class="enyo-unselectable" class="container">
+  <div class="content">
+    <div class="date">{{date | date:'fullDate'}}</div>
+    <div class="clock">
+      <img class="ampm" [src]="'assets/enyo/images/clock/' + time.ampm + '.png'">
+      <img class="digit" style="left: 24px" [src]="'assets/enyo/images/clock/digit-' + time.hours1 + '.png'" *ngIf="time.hours1 != null">
+      <img class="digit" style="left: 82px" [src]="'assets/enyo/images/clock/digit-' + time.hours2 + '.png'">
+      <img class="digit" style="left: 171px" [src]="'assets/enyo/images/clock/digit-' + time.mins1 + '.png'">
+      <img class="digit" style="left: 239px" [src]="'assets/enyo/images/clock/digit-' + time.mins2 + '.png'">
+    </div>
+  </div>
+</div>

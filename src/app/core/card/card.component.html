@@ -20,6 +20,7 @@
 		<textassist-app *ngSwitchCase="'textassist'"></textassist-app>
 		<sound-app *ngSwitchCase="'sound'"></sound-app>
 		<datetime-app *ngSwitchCase="'datetime'"></datetime-app>
+		<clock-app *ngSwitchCase="'clock'"></clock-app>
 		<div *ngSwitchDefault>Default app</div>
 	</div>
 	<iframe class="app-frame" [src]="url" (loadend)="frameContentLoaded()" *ngIf="config.url != ''"></iframe>
