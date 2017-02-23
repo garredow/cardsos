@@ -52,7 +52,7 @@ onyx-groupbox/deep/ * {
   /**/
   background-color: #4C4C4C;
   border: none;
-  background: #4C4C4C url('assets/enyo/layout/onyx/images/gradient.png') repeat-x 0 10px;
+  background: #4C4C4C url('/assets/enyo/layout/onyx/images/gradient.png') repeat-x 0 10px;
 }
 .onyx-groupbox .onyx-input-decorator {
   display: block;

@@ -44,7 +44,7 @@
     height: 190px;
     width: 320px;
     margin: 0 auto;
-    background: url('assets/enyo/images/clock/flippers-portrait.png') center no-repeat;
+    background: url('/assets/enyo/images/clock/flippers-portrait.png') center no-repeat;
 }
 .clock .ampm {
     position: absolute;

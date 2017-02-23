@@ -15,10 +15,12 @@ export class LauncherComponent implements OnInit {
 	panels: any[];
 	isReady: boolean = false;
 	@Output() onOpenApp = new EventEmitter<Object>();
+	document: Document;
 
 	@ViewChild('container') private container: ElementRef;
 
-	constructor(private _appsService: AppsService, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: Document) {
+	constructor(private _appsService: AppsService, private pageScrollService: PageScrollService) {
+		this.document = document;
 		PageScrollConfig.defaultIsVerticalScrolling = false;
 	}
 

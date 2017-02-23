@@ -40,8 +40,10 @@ export class HomeComponent implements OnInit {
 	navStateCenter: string = 'inactive';
 	navStateRight: string = 'inactive';
 	@ViewChild('cardsContainer') scroller: ElementRef;
+	document: Document;
 
-	constructor(private _rd: Renderer, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: Document) {
+	constructor(private _rd: Renderer, private pageScrollService: PageScrollService) {
+		this.document = document;
 		PageScrollConfig.defaultIsVerticalScrolling = false;
 	}
 

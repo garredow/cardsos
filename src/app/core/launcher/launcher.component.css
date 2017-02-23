@@ -39,7 +39,7 @@
     vertical-align: top;
     border-radius: 20px;
     margin-right: 10px;
-    background-image: url('assets/ui/launcher-bg.png');
+    background-image: url('/assets/ui/launcher-bg.png');
 }
 .panel:last-child {
     margin: 0px;

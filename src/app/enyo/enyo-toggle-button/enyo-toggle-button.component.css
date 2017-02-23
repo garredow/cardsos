@@ -9,7 +9,7 @@
   /* */
   border-radius: 3px;
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.4);
-  background: #8BBA3D url('assets/enyo/layout/onyx/images/gradient-invert.png') repeat-x bottom;
+  background: #8BBA3D url('/assets/enyo/layout/onyx/images/gradient-invert.png') repeat-x bottom;
   background-size: auto 100%;
   /* label */
   color: white;
@@ -26,7 +26,7 @@
   height: 30px;
   margin: 1px;
   border-radius: 3px;
-  background: #F6F6F6 url('assets/enyo/layout/onyx/images/gradient.png') repeat-x;
+  background: #F6F6F6 url('/assets/enyo/layout/onyx/images/gradient.png') repeat-x;
   background-size: auto 100%;
 }
 .onyx-toggle-button .onyx-toggle-button-knob {
