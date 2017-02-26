@@ -18,6 +18,7 @@
     white-space: nowrap;
 
     display: flex;
+    height: 100%;
     /*will-change: scroll-position;*/
 
     /*-webkit-scroll-snap-points-x: repeat(100%);
@@ -33,7 +34,7 @@
 .panel {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 74px);
+    /*height: calc(100% - 32px);*/
     width: 100vw;
     min-width: 100vw;
     vertical-align: top;

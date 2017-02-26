@@ -11,7 +11,7 @@
     overflow-y: hidden;
 
     /* Safari fix */
-    height: calc(100vh - 74px);
+    /*height: calc(100vh - 74px);*/
 }
 .cards-container.overview {
     overflow-x: hidden;

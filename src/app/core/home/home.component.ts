@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, Renderer, Inject, trigger, state, style, transition, animate, keyframes, AnimationTransitionEvent } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer, Inject, trigger, state, style, transition, animate, keyframes, AnimationTransitionEvent, HostListener, HostBinding } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { StatusbarComponent } from '../statusbar/statusbar.component';
 import { CardComponent } from '../card/card.component';
@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
 	navStateRight: string = 'inactive';
 	@ViewChild('cardsContainer') scroller: ElementRef;
 	document: Document;
+	@HostBinding('style.height') viewportHeight: string = window.innerHeight + 'px';
 
 	constructor(private _rd: Renderer, private pageScrollService: PageScrollService) {
 		this.document = document;
@@ -208,5 +209,11 @@ export class HomeComponent implements OnInit {
 		console.log('viewFullScreen:', ev);
 		this.isCardView = false;
 		this.appName = ev.title;
+	}
+
+	@HostListener('window:resize', ['$event'])
+	onResize(event) {
+		// console.log('onResize', event.target.innerHeight);
+		this.viewportHeight = event.target.innerHeight + 'px';
 	}
 }
