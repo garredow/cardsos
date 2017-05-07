@@ -101,7 +101,7 @@
   /**/
   background-color: #4C4C4C;
   border: none;
-  background: #4C4C4C url('assets/enyo/layout/onyx/images/gradient.png') repeat-x 0 10px;
+  background: #4C4C4C url('../layout/onyx/images/gradient.png') repeat-x 0 10px;
 }
 .onyx-groupbox .onyx-input-decorator {
   display: block;
@@ -167,7 +167,7 @@
   padding: 9px 8px 10px 8px;
   /**/
   border: 1px solid #3A3A3A;
-  background: #4C4C4C url('assets/enyo/layout/onyx/images/gradient.png') repeat-x 0 bottom;
+  background: #4C4C4C url('../layout/onyx/images/gradient.png') repeat-x 0 bottom;
   background-size: contain;
   color: white;
   /**/
@@ -224,13 +224,13 @@
   width: 59px;
   height: 58px;
   display: inline-block;
-  background: url('assets/enyo/layout/onyx/images/spinner-dark.gif') no-repeat 0 0;
+  background: url('../layout/onyx/images/spinner-dark.gif') no-repeat 0 0;
   /*background-size: 54px 55px;*/
   background-size: contain !important;
   background-color: transparent !important
 }
 .onyx-spinner.onyx-light {
-  background: url('assets/enyo/layout/onyx/images/spinner-light.gif') no-repeat 0 0;
+  background: url('../layout/onyx/images/spinner-light.gif') no-repeat 0 0;
 }
 
 /* ProgressBar.css */
@@ -239,13 +239,13 @@
   height: 8px;
   border: 1px solid rgba(15, 15, 15, 0.2);
   border-radius: 3px;
-  background: #B8B8B8 url('assets/enyo/layout/onyx/images/gradient-invert.png') repeat-x;
+  background: #B8B8B8 url('../layout/onyx/images/gradient-invert.png') repeat-x;
   background-size: auto 100%;
 }
 .onyx-progress-bar-bar {
   height: 100%;
   border-radius: 3px;
-  background: #58ABEF url('assets/enyo/layout/onyx/images/gradient.png') repeat-x;
+  background: #58ABEF url('../layout/onyx/images/gradient.png') repeat-x;
   background-size: auto 100%;
 }
 .onyx-progress-bar-bar.striped {
@@ -307,7 +307,7 @@
   /* */
   border-radius: 3px;
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.4);
-  background: #8BBA3D url('assets/enyo/layout/onyx/images/gradient-invert.png') repeat-x bottom;
+  background: #8BBA3D url('../layout/onyx/images/gradient-invert.png') repeat-x bottom;
   background-size: auto 100%;
   /* label */
   color: white;
@@ -324,7 +324,7 @@
   height: 30px;
   margin: 1px;
   border-radius: 3px;
-  background: #F6F6F6 url('assets/enyo/layout/onyx/images/gradient.png') repeat-x;
+  background: #F6F6F6 url('../layout/onyx/images/gradient.png') repeat-x;
   background-size: auto 100%;
 }
 .onyx-toggle-button .onyx-toggle-button-knob {
@@ -356,7 +356,7 @@
 
 /* Grabber.css */
 .onyx-grabber {
-  background: url('assets/enyo/layout/onyx/images/grabbutton.png') no-repeat center;
+  background: url('../layout/onyx/images/grabbutton.png') no-repeat center;
   background-size: 100% auto;
   width: 23px;
   height: 27px;
@@ -451,7 +451,7 @@
   position: relative;
   height: 40px;
   width: 40px;
-  background: url('assets/enyo/layout/onyx/images/slider-handle.png') left top no-repeat;
+  background: url('../layout/onyx/images/slider-handle.png') left top no-repeat;
   background-size: 100% auto;
   margin: -23px -20px;
 }
@@ -476,7 +476,7 @@
   cursor: pointer;
   height: 32px;
   width: 32px;
-  background: url('assets/enyo/layout/onyx/images/checkbox.png') no-repeat;
+  background: url('../layout/onyx/images/checkbox.png') no-repeat;
   background-size: 100% auto;
   /* reset for ? */
   margin: 0px;
@@ -552,7 +552,7 @@
   border-radius: 8px;
   padding: 6px;
   color: white;
-  background: #4C4C4C url('assets/enyo/layout/onyx/images/gradient.png') repeat-x 0 bottom;
+  background: #4C4C4C url('../layout/onyx/images/gradient.png') repeat-x 0 bottom;
 }
 .onyx-popup-decorator {
   position: relative;
@@ -585,7 +585,7 @@
   /* border-bottom: 1px solid rgba(15, 15, 15, 0.5); */
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
   /**/
-  background: #E1E1E1 url('assets/enyo/layout/onyx/images/gradient.png') repeat-x bottom;
+  background: #E1E1E1 url('../layout/onyx/images/gradient.png') repeat-x bottom;
   background-size: contain;
   /**/
   text-overflow: ellipsis;
@@ -603,7 +603,7 @@
 */
 .onyx-button.active,
 .onyx-button.pressed {
-  background-image: url('assets/enyo/layout/onyx/images/gradient-invert.png');
+  background-image: url('../layout/onyx/images/gradient-invert.png');
   background-position: top;
   border-top: 1px solid rgba(15, 15, 15, 0.6);
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
@@ -651,7 +651,7 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   text-align: center;
   /**/
-  background: #E7E7E7 url('assets/enyo/layout/onyx/images/gradient.png') repeat-x bottom;
+  background: #E7E7E7 url('../layout/onyx/images/gradient.png') repeat-x bottom;
   /* IE8 */
   border: 1px solid #333333;
   border: 1px solid rgba(15, 15, 15, 0.2);
@@ -670,7 +670,7 @@
 }
 .onyx-radiobutton.active {
   color: white;
-  background: #0091F2 url('assets/enyo/layout/onyx/images/gradient-invert.png') repeat-x top;
+  background: #0091F2 url('../layout/onyx/images/gradient-invert.png') repeat-x top;
   border-top: 1px solid rgba(15, 15, 15, 0.6);
   box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.2);
 }
@@ -770,11 +770,11 @@
   height: 16px;
   vertical-align: middle;
   background-repeat: no-repeat;
-  background-image: url('assets/enyo/layout/onyx/images/close-inactive.png');
+  background-image: url('../layout/onyx/images/close-inactive.png');
   background-size: 100% auto;
 }
 .onyx-tab-item-close:hover {
-  background-image: url('assets/enyo/layout/onyx/images/close-active.png');
+  background-image: url('../layout/onyx/images/close-active.png');
 }
 
 /* Tooltip.css */
@@ -787,7 +787,7 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: white;
-  background: #216593 url('assets/enyo/layout/onyx/images/gradient.png') repeat-x 0 bottom;
+  background: #216593 url('../layout/onyx/images/gradient.png') repeat-x 0 bottom;
   border-radius: 3px;
   white-space: nowrap;
 }
@@ -1129,7 +1129,7 @@
 
 /* Submenu.css */
 .onyx-submenu {
-  background: rgba(0, 0, 0, 0.25) url('assets/enyo/layout/onyx/images/gradient-invert.png') repeat-x 0 top;
+  background: rgba(0, 0, 0, 0.25) url('../layout/onyx/images/gradient-invert.png') repeat-x 0 top;
 }
 
 /* Picker.css */
@@ -1200,7 +1200,7 @@
   margin-bottom: 5px;
 }
 .onyx-more-button {
-  background-image: url('assets/enyo/layout/onyx/images/more.png');
+  background-image: url('../layout/onyx/images/more.png');
   width: 32px;
   height: 32px;
 }

@@ -25,7 +25,7 @@
   /* border-bottom: 1px solid rgba(15, 15, 15, 0.5); */
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
   /**/
-  background: #E1E1E1 url('assets/enyo/layout/onyx/images/gradient.png') repeat-x bottom;
+  background: #E1E1E1 url('/assets/enyo/layout/onyx/images/gradient.png') repeat-x bottom;
   background-size: contain;
   /**/
   text-overflow: ellipsis;
@@ -44,7 +44,7 @@
 */
 .onyx-button.active,
 .onyx-button.pressed {
-  background-image: url('assets/enyo/layout/onyx/images/gradient-invert.png');
+  background-image: url('/assets/enyo/layout/onyx/images/gradient-invert.png');
   background-position: top;
   border-top: 1px solid rgba(15, 15, 15, 0.6);
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
