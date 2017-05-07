@@ -18,8 +18,8 @@ export class AppsService {
 		{id: 'settings', title: 'Settings', url: '', iconUrl: 'assets/icons/settings.png'},
 		{id: 'update', title: 'System Updates', url: '', iconUrl: 'assets/icons/update.png'},
 		{id: 'browser', title: 'Web', url: '', iconUrl: 'assets/icons/browser.png'},
-		{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather.png'},
-		{id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts.png'},
+		{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.garrettdowns.io', iconUrl: 'assets/icons/dash-weather.png'},
+		{id: 'foxcasts', title: 'FoxCasts', url: 'http://foxcasts.com', iconUrl: 'assets/icons/foxcasts.png'},
 	];
 
 	constructor() { }
