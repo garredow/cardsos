@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['../../../assets/enyo/css/enyo.css', '../../../assets/enyo/css/layout.css', '../../../assets/enyo/css/onyx.css', './browser-app.component.css']
 })
 export class BrowserAppComponent implements OnInit {
-  inputState: Object = {};
+  inputState: any = {};
 
   constructor() { }
 

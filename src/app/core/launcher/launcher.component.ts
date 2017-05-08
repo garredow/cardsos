@@ -17,7 +17,7 @@ export class LauncherComponent implements OnInit {
 	@Output() onOpenApp = new EventEmitter<Object>();
 	document: Document;
 
-	@ViewChild('container') private container: ElementRef;
+	@ViewChild('container') container: ElementRef;
 
 	constructor(private _appsService: AppsService, private pageScrollService: PageScrollService) {
 		this.document = document;
