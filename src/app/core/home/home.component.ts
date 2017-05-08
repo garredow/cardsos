@@ -104,8 +104,8 @@ export class HomeComponent implements OnInit {
 			{id: 'phone', title: 'Phone', url: '', iconUrl: 'assets/icons/phone-64.png'},
 			{id: 'browser', title: 'Web', url: '', iconUrl: 'assets/icons/browser-64.png'},
 			// {id: 'macaw', title: 'Macaw', url: 'http://choorp.com/macaw', iconUrl: 'assets/icons/macaw.png'},
-			{id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts-256.png'},
-			{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather-64.png'},
+			{id: 'foxcasts', title: 'FoxCasts', url: 'http://foxcasts.com', iconUrl: 'assets/icons/foxcasts-256.png'},
+			{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.garrettdowns.io', iconUrl: 'assets/icons/dash-weather-64.png'},
 			{id: 'launcher', title: 'App 5', url: '', iconUrl: 'assets/icons/launcher-phone.png'},
 		];
 	}
