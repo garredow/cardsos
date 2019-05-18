@@ -87,9 +87,8 @@ export class LauncherComponent implements OnInit {
 			},
 			{
 				title: 'Garrett\'s Apps', apps: [
-					
-					{ id: 'foxcasts', title: 'FoxCasts', url: 'http://preview.foxcasts.com', iconUrl: 'assets/icons/foxcasts-256.png' },
-					{ id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.choorp.com', iconUrl: 'assets/icons/dash-weather-64.png' },
+					{id: 'foxcasts', title: 'FoxCasts', url: 'https://foxcasts.garredow.com', iconUrl: 'assets/icons/foxcasts-256.png'},
+					{id: 'dash-weather', title: 'Dash Weather', url: 'https://dashweather.garredow.com', iconUrl: 'assets/icons/dash-weather-64.png'},
 				]
 			},
 			{
